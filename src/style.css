@@ -1019,6 +1019,8 @@ footer { background: var(--black); padding: 60px 40px 40px; color: var(--purple-
       opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1),
       transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
     will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .reveal.reveal-left   { transform: translate3d(-72px, 0, 0); }
@@ -1033,6 +1035,14 @@ footer { background: var(--black); padding: 60px 40px 40px; color: var(--purple-
     transform: none;
   }
 
+  /* Once the reveal has settled, JS removes .reveal / flips this class on to
+     release the GPU layer (frees memory for scroll performance on mobile). */
+  .reveal.reveal-done,
+  .reveal-stagger.reveal-done > * {
+    will-change: auto;
+    transition: none;
+  }
+
   /* Stagger cascade for direct children */
   .reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0.05s; }
   .reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.15s; }
@@ -1045,6 +1055,41 @@ footer { background: var(--black); padding: 60px 40px 40px; color: var(--purple-
 
   /* Subtle optional scroll-tied parallax on the floating phone */
   .phone-stage { transition: transform 0.2s linear; will-change: transform; }
+
+  /* ===== Mobile tuning =====
+     Shorter distances, shorter durations, tighter stagger = snappy on phones
+     and dramatically cheaper to composite on mid-tier hardware. */
+  @media (max-width: 768px) {
+    .reveal,
+    .reveal-stagger > * {
+      transform: translate3d(0, 20px, 0);
+      transition:
+        opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .reveal.reveal-left   { transform: translate3d(-28px, 0, 0); }
+    .reveal.reveal-right  { transform: translate3d(28px, 0, 0); }
+    .reveal.reveal-zoom   { transform: scale(0.94); }
+    .reveal.reveal-rotate { transform: translate3d(0, 22px, 0) rotate(-3deg); }
+    .reveal.reveal-tilt   { transform: translate3d(0, 22px, 0) rotate(2deg); }
+
+    .reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0.03s; }
+    .reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.09s; }
+    .reveal-stagger.in-view > *:nth-child(3) { transition-delay: 0.15s; }
+    .reveal-stagger.in-view > *:nth-child(4) { transition-delay: 0.21s; }
+    .reveal-stagger.in-view > *:nth-child(5) { transition-delay: 0.27s; }
+    .reveal-stagger.in-view > *:nth-child(6) { transition-delay: 0.33s; }
+    .reveal-stagger.in-view > *:nth-child(7) { transition-delay: 0.39s; }
+    .reveal-stagger.in-view > *:nth-child(n + 8) { transition-delay: 0.45s; }
+
+    /* Parallax on the phone causes jank on iOS momentum scroll — disable. */
+    .phone-stage { transition: none; will-change: auto; }
+  }
+
+  /* Touch-only devices (phones / most tablets): no parallax regardless of width. */
+  @media (hover: none) and (pointer: coarse) {
+    .phone-stage { transition: none; will-change: auto; }
+  }
 }
 
 @media (max-width: 900px) {

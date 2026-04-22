@@ -88,31 +88,59 @@ if (nav) {
 
 // Scroll reveal animations (Apple-style)
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
   const revealTargets = document.querySelectorAll(".reveal, .reveal-stagger");
 
+  // Release GPU layers (`will-change`) after the animation settles.
+  // This keeps mobile scrolling smooth: scroll perf is about how many
+  // composited layers the browser has to rasterize per frame.
+  const clearWillChange = (el) => {
+    const onEnd = (e) => {
+      if (e.target !== el) return;
+      el.classList.add("reveal-done");
+      el.removeEventListener("transitionend", onEnd);
+    };
+    el.addEventListener("transitionend", onEnd);
+    // Safety: force cleanup after a generous timeout in case transitionend
+    // never fires (e.g. element was display:none'd before finishing).
+    setTimeout(() => el.classList.add("reveal-done"), 2000);
+  };
+
   const io = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          io.unobserve(entry.target);
-        }
-      });
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const el = entry.target;
+        // rAF ensures the class is applied on the next paint frame — avoids
+        // layout thrash when many elements enter the viewport at once (common
+        // on phones because the viewport is short and hero+problem reveal
+        // nearly simultaneously on first load).
+        requestAnimationFrame(() => {
+          el.classList.add("in-view");
+          clearWillChange(el);
+        });
+        io.unobserve(el);
+      }
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -8% 0px",
+      // Slightly earlier trigger on mobile so reveals happen in-flow rather
+      // than feeling "late" on short viewports.
+      threshold: isSmallScreen ? 0.05 : 0.12,
+      rootMargin: isSmallScreen ? "0px 0px -4% 0px" : "0px 0px -8% 0px",
     }
   );
 
   revealTargets.forEach((el) => io.observe(el));
 
-  // Subtle parallax on the floating phone while hero is visible
+  // Parallax on the floating phone — desktop only. Scroll-tied transforms
+  // are a known jank source on iOS Safari (momentum scroll) and on
+  // low-end Android devices, so we skip it for touch + narrow screens.
   const phoneStage = document.querySelector(".phone-stage");
   const hero = document.querySelector(".hero");
-  if (phoneStage && hero) {
+  if (phoneStage && hero && !isTouchDevice && !isSmallScreen) {
     let ticking = false;
     const updatePhoneParallax = () => {
       const rect = hero.getBoundingClientRect();
