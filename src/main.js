@@ -59,8 +59,8 @@ if (qr) {
 // Nav color detection
 const nav = document.getElementById("mainNav");
 if (nav) {
-  const darkSections = [".hero", ".trust-section", ".final-cta", ".legal-hero"];
-  const lightSections = [".social-proof", ".problem", ".how", ".feature-deep", ".pricing", ".creators", ".faq", ".legal-shell"];
+  const darkSections = [".hero", ".trust-section", ".final-cta", ".legal-hero", ".help-hero", ".help-contact"];
+  const lightSections = [".social-proof", ".problem", ".how", ".feature-deep", ".pricing", ".creators", ".faq", ".legal-shell", ".help-shell"];
 
   function updateNavColor() {
     const checkY = 60;
@@ -217,5 +217,115 @@ if (toc) {
         }
       });
     });
+  }
+}
+
+// Help center: live search filter across all articles.
+// Null-guarded so it's a no-op on pages without the help search input.
+const helpSearch = document.getElementById("helpSearch");
+if (helpSearch) {
+  const clearBtn = document.getElementById("helpSearchClear");
+  const emptyState = document.getElementById("helpEmpty");
+  const emptyTerm = document.getElementById("helpEmptyTerm");
+  const articles = Array.from(document.querySelectorAll(".help-article"));
+  const categories = Array.from(document.querySelectorAll(".help-category"));
+
+  // Pre-compute lowercase search text for each article to keep filtering fast
+  // even with many articles — avoids re-reading the DOM on every keystroke.
+  const index = articles.map((article) => ({
+    article,
+    text: (article.textContent || "").toLowerCase(),
+    // Remember whether the article was manually opened before a search
+    // started, so we can restore that state when the search is cleared.
+    wasOpen: article.open,
+  }));
+
+  // Track which articles the search has opened vs which the user opened;
+  // clearing the search should only close search-opened ones.
+  const searchOpened = new WeakSet();
+
+  const applyFilter = (rawQuery) => {
+    const query = rawQuery.trim().toLowerCase();
+
+    if (!query) {
+      // Reset to initial state: show everything, close any articles we
+      // forced open because of a match, leave user-opened ones alone.
+      articles.forEach((article) => {
+        article.hidden = false;
+        article.classList.remove("is-match");
+        if (searchOpened.has(article)) {
+          article.open = false;
+          searchOpened.delete(article);
+        }
+      });
+      categories.forEach((cat) => { cat.hidden = false; });
+      emptyState.hidden = true;
+      clearBtn.hidden = true;
+      return;
+    }
+
+    clearBtn.hidden = false;
+
+    let anyMatch = false;
+
+    index.forEach(({ article, text }) => {
+      const matches = text.includes(query);
+      article.hidden = !matches;
+      article.classList.toggle("is-match", matches);
+      if (matches) {
+        anyMatch = true;
+        // Auto-open matching articles so users can scan answers without
+        // another click, but remember we did so for later cleanup.
+        if (!article.open) {
+          article.open = true;
+          searchOpened.add(article);
+        }
+      } else if (searchOpened.has(article)) {
+        article.open = false;
+        searchOpened.delete(article);
+      }
+    });
+
+    // Hide categories that now have no visible articles.
+    categories.forEach((cat) => {
+      const visibleArticles = cat.querySelectorAll(".help-article:not([hidden])");
+      cat.hidden = visibleArticles.length === 0;
+    });
+
+    emptyTerm.textContent = rawQuery.trim();
+    emptyState.hidden = anyMatch;
+  };
+
+  // Simple debounce so we don't thrash on every keystroke in very long lists.
+  let debounce;
+  helpSearch.addEventListener("input", (e) => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => applyFilter(e.target.value), 60);
+  });
+
+  clearBtn.addEventListener("click", () => {
+    helpSearch.value = "";
+    applyFilter("");
+    helpSearch.focus();
+  });
+
+  // Pressing Escape inside the search clears it.
+  helpSearch.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && helpSearch.value) {
+      e.preventDefault();
+      helpSearch.value = "";
+      applyFilter("");
+    }
+  });
+
+  // Support deep-linking to a specific article via URL hash (e.g. /help#getting-started).
+  // Scroll the target category into view after initial paint.
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   }
 }

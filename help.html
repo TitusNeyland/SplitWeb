@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kilo Help Center. Answers to common questions about splits, payments, Kilo Plus, and your account."
+    />
+    <meta name="theme-color" content="#1a0b2e" />
+
+    <meta property="og:title" content="Kilo — Help Center" />
+    <meta property="og:description" content="Get help with splits, payments, Kilo Plus, and your account." />
+    <meta property="og:type" content="website" />
+
+    <title>Help Center — Kilo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body class="help-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="mainNav" class="on-dark" aria-label="Primary">
+      <a class="logo" href="./index.html">Kilo</a>
+      <div class="nav-links">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#features">Features</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a href="./index.html#faq">FAQ</a>
+        <a href="./index.html#download" class="nav-cta">Get the App</a>
+      </div>
+    </nav>
+
+    <header class="help-hero">
+      <div class="help-hero-inner">
+        <div class="section-label">Help Center</div>
+        <h1>How can we<br /><span class="italic">help</span>?</h1>
+        <p class="help-lede">
+          Search the answers below, or reach out to our team directly — we respond within one business day.
+        </p>
+        <form class="help-search" role="search" onsubmit="event.preventDefault();">
+          <svg class="help-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input
+            type="search"
+            id="helpSearch"
+            placeholder="Search for an answer…"
+            aria-label="Search the help center"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button type="button" class="help-search-clear" id="helpSearchClear" aria-label="Clear search" hidden>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <main id="main" class="help-shell">
+      <!-- Category pill navigation -->
+      <nav class="help-categories" aria-label="Help categories">
+        <a class="help-cat-pill" href="#getting-started">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+          </span>
+          <span>Getting started</span>
+        </a>
+        <a class="help-cat-pill" href="#splits-help">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </span>
+          <span>Splits</span>
+        </a>
+        <a class="help-cat-pill" href="#payments-help">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </span>
+          <span>Payments &amp; Kilo Plus</span>
+        </a>
+        <a class="help-cat-pill" href="#account-help">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+          </span>
+          <span>Account &amp; security</span>
+        </a>
+        <a class="help-cat-pill" href="#troubleshooting-help">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          <span>Troubleshooting</span>
+        </a>
+        <a class="help-cat-pill" href="#privacy-help">
+          <span class="help-cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          </span>
+          <span>Privacy &amp; data</span>
+        </a>
+      </nav>
+
+      <!-- No-results banner (hidden by default) -->
+      <div class="help-empty" id="helpEmpty" hidden>
+        <p>No answers matched <strong><span id="helpEmptyTerm"></span></strong>.</p>
+        <p class="legal-muted">Try a different search, browse the categories below, or <a href="#contact-help">contact support</a>.</p>
+      </div>
+
+      <!-- ========= GETTING STARTED ========= -->
+      <section id="getting-started" class="help-category" data-category="Getting started">
+        <header class="help-category-header">
+          <div class="section-label">Getting started</div>
+          <h2>The basics of Kilo.</h2>
+          <p>New to Kilo? Start here.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What is Kilo, exactly?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Kilo is a tool for splitting recurring costs — subscriptions like Netflix, Spotify, and Disney+, or bills like the internet — with a group of friends, roommates, or family.</p>
+              <p>You add the service, invite the people who share it, and Kilo charges each person their share on the schedule you set. Kilo is not a bank and doesn't replace the underlying service; it just handles the money between you and your group. Payments are processed by Stripe.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I create a Kilo account?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Download Kilo from the App Store or Google Play and open it. You can sign up with your email, with Sign in with Apple, or with Sign in with Google. You'll be asked to verify your phone number (we send you a 6-digit code by SMS), add your name and profile photo, and — if you want to start splitting right away — add a payment method.</p>
+              <p>You must be at least 18 years old to use Kilo.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I add my first split?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Tap the + button on the home tab, then choose the service you're splitting (or pick "Custom" for anything not in the list). Enter the total monthly or yearly cost, how often you're billed, and who's sharing the cost. You can split evenly or by custom amounts.</p>
+              <p>Once you invite your friends and they accept, Kilo will start collecting each person's share on the schedule you chose.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I invite friends to a split?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Open the split and tap "Invite." You can pick people from your contacts (we'll match them to Kilo users privately — see the <a href="./privacy.html#collect-contacts">Privacy Policy</a> for how that works), share a link, or send an SMS invite.</p>
+              <p>If a friend isn't on Kilo yet, they'll get a link to download the app, create an account, and accept the split. You're not charged for their share — and they aren't either — until they join and confirm.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= SPLITS ========= -->
+      <section id="splits-help" class="help-category" data-category="Splits">
+        <header class="help-category-header">
+          <div class="section-label">Splits</div>
+          <h2>Managing your splits.</h2>
+          <p>Creating, changing, leaving, and troubleshooting splits.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do splits actually work?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>The person who creates a split is the <strong>Owner</strong> — usually whoever has the subscription on their own card. Everyone else is a <strong>Member</strong>. Each billing cycle, Kilo charges each Member their share and sends the collected amount to the Owner (minus processing fees, which are already baked into the amounts shown in-app).</p>
+              <p>You only get charged for splits you've explicitly joined. Kilo doesn't charge people who were invited but haven't accepted yet.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Can I split with friends who don't have Kilo yet?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Yes — invite them, and Kilo will send them a link. They'll need to install the app and create an account before their share starts getting charged. If they never join, you'll see a pending invite; nothing happens automatically and no money moves.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I change a split (price, members, frequency)?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Open the split and tap "Edit." The Owner can change the total amount, the billing cadence, add or remove members, and adjust each person's share. For material changes (a new total or a new share for a Member), existing Members will get a notification and will need to re-confirm before the next billing cycle.</p>
+              <p>If a Member doesn't re-confirm, they're paused on that split until they do — nobody is silently charged a new amount.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I leave a split?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Open the split, tap the menu (⋯), and choose "Leave split." You'll remain responsible for your share of the current billing cycle, and you'll stop being charged going forward. The Owner is notified so they can find a replacement or adjust the other shares.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What if someone doesn't pay their share?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Kilo automatically retries a failed charge up to 3 times over the following week. The Member gets an alert each time, and the Owner gets a heads-up that a payment is overdue. After repeated failures we'll remove the Member from the split — at that point the Owner can invite someone else or adjust the remaining shares.</p>
+              <p><strong>Important:</strong> Kilo doesn't cover the shortfall. If a Member's share fails and they haven't paid by the time the underlying service bills the Owner, the Owner is still on the hook with the service provider. See the <a href="./terms.html#splits">Terms §5</a> for details.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Are we allowed to split a service between people not in the same household?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>That depends on the service, not on Kilo. Services like Netflix, Hulu, Disney+, and Spotify Family have specific household or family-only rules in their own terms of service. Kilo provides the payment coordination — you're responsible for making sure your use complies with each service's rules.</p>
+              <p>If a service we don't own specifically prohibits splitting, we may remove those splits from Kilo on request.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Can I split a one-time expense (like a pizza)?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Not today. Kilo is built specifically for <em>recurring</em> shared costs — subscriptions and regular bills. For one-off expenses, a tool like Splitwise or Venmo is a better fit. We may add one-time splits in the future.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Can one person be in more than one split for the same service?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Yes — if you have Netflix with your roommates and separately share a Disney+ family plan with your siblings, those are two independent splits. Kilo shows them in your home tab, and each has its own billing schedule and share amounts.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= PAYMENTS & KILO PLUS ========= -->
+      <section id="payments-help" class="help-category" data-category="Payments & Kilo Plus">
+        <header class="help-category-header">
+          <div class="section-label">Payments &amp; Kilo Plus</div>
+          <h2>Billing, fees, and subscriptions.</h2>
+          <p>How charges work and everything about Kilo Plus.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What payment methods do you accept?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>We accept Visa, Mastercard, American Express, and Discover credit and debit cards through Stripe. On iOS you can add a card via Apple Pay; on Android via Google Pay. We don't yet support ACH, PayPal, or cryptocurrency.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>When does Kilo charge my card?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>For each split you're a Member of, Kilo charges your card on the billing date you agreed to when you joined. Most splits bill monthly on the same day of the month as the Owner's underlying subscription. You'll get a push notification the morning of each charge, and an emailed receipt after.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What happens if my payment fails?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>We'll retry the charge up to 3 times over the following week. You'll get a notification the first time it fails — the fix is almost always updating your card or ensuring there are sufficient funds. If all retries fail, you'll be paused on that split until the payment method is updated.</p>
+              <p>We don't charge a failed-payment fee. Your bank may charge NSF fees; those are between you and your bank.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Why was my card charged a different amount this month?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>A few possibilities:</p>
+              <ul>
+                <li>The underlying service raised its price (and the Owner updated the split to match).</li>
+                <li>A Member joined or left the split, so everyone's share got recalculated.</li>
+                <li>It's a different billing cadence — e.g., you pay annually instead of monthly.</li>
+              </ul>
+              <p>Open the split and tap "Billing history" to see the exact breakdown for each charge. If something looks off, message the Owner first; if you still think there's an error, email <a href="mailto:support@getkilo.app">support@getkilo.app</a>.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What's included in Kilo Plus?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Kilo Plus lifts the 2-active-splits cap and unlocks unlimited splits, larger groups, advanced scheduling, saving insights, and priority support. See the <a href="./index.html#pricing">pricing page</a> for the current feature list.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I upgrade to Kilo Plus?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Open <em>Settings → Subscription</em> in the app and tap "Upgrade." Choose monthly or annual (annual saves you 20%) and confirm. You'll have access immediately; your first renewal is exactly one period later.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I cancel Kilo Plus?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Subscription → Cancel</em>. You'll keep Kilo Plus features until the end of the period you've already paid for, then you'll downgrade to the free plan.</p>
+              <p>If you subscribed through the App Store or Google Play, you need to cancel from your platform's subscription settings — not inside Kilo. That's a platform rule, not ours.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Do you offer refunds?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>For the Kilo Plus subscription, we don't refund partial periods by default — when you cancel, you keep access through the end of your paid period and aren't charged again. If you think you have a specific case that deserves a refund (e.g., an unintentional renewal, accidental double-charge), email <a href="mailto:support@getkilo.app">support@getkilo.app</a>.</p>
+              <p>For refunds <em>between Members</em> of a split (e.g., someone paid for a month they shouldn't have), the Owner of the split can initiate a refund to the Member from inside the app.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= ACCOUNT & SECURITY ========= -->
+      <section id="account-help" class="help-category" data-category="Account & security">
+        <header class="help-category-header">
+          <div class="section-label">Account &amp; security</div>
+          <h2>Your account, your control.</h2>
+          <p>Updating your info, locking down your account, and managing your data.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I change my email or phone number?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Account</em>. Tap the field you want to change. We'll send a verification code to the new address or number before we save it. If you've lost access to your old email or phone, contact <a href="mailto:support@getkilo.app">support@getkilo.app</a> with a government ID and we'll help you recover the account.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I update my payment method?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Payment methods</em>. You can add, remove, or set a default. If a card is being used for active splits, you can swap it for another card before removing it.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I enable Face ID, Touch ID, or a PIN?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Security</em>. Toggle "Require biometric to open" and/or set a 6-digit PIN. Biometric data never leaves your device — Kilo only receives a yes/no signal from your operating system.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>I forgot my password.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>On the login screen, tap "Forgot password?" and enter the email on your account. We'll send a reset link. If you signed up with Apple or Google, you don't have a Kilo password — sign in with the same provider and you're in.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>I think someone else has access to my account.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Act fast:</p>
+              <ol>
+                <li>Change your password from <em>Settings → Security → Change password</em>.</li>
+                <li>Sign out all other sessions from <em>Settings → Security → Sign out everywhere</em>.</li>
+                <li>Turn on biometric or PIN lock.</li>
+                <li>Email <a href="mailto:security@getkilo.app">security@getkilo.app</a> with details — we can review recent activity and reverse any unauthorized changes.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I export my data?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Privacy → Download my data</em>. We'll email you a link to a JSON file containing your profile, your splits, and your transaction history, usually within a few hours. See the <a href="./privacy.html#rights">Privacy Policy §10</a> for your full data rights.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How do I delete my account?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Go to <em>Settings → Account → Delete account</em>. You'll need to leave any splits you're still part of, or transfer ownership of splits you own. After you confirm, we'll delete your data within 30 days, except for records we're required to keep for tax and accounting reasons. Deletion is permanent — we can't bring an account back.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= TROUBLESHOOTING ========= -->
+      <section id="troubleshooting-help" class="help-category" data-category="Troubleshooting">
+        <header class="help-category-header">
+          <div class="section-label">Troubleshooting</div>
+          <h2>When something's not working.</h2>
+          <p>Quick fixes for the most common issues.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>The app won't open or keeps crashing.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Try these in order:</p>
+              <ol>
+                <li>Force-quit and reopen the app.</li>
+                <li>Make sure you're on the latest version (App Store → Updates, or Play Store → My apps).</li>
+                <li>Restart your phone.</li>
+                <li>If it's still crashing, email <a href="mailto:support@getkilo.app">support@getkilo.app</a> with your device model, OS version, and the app version shown in <em>Settings → About</em>. Crash logs are sent automatically so we can usually spot the issue quickly.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>I didn't receive the SMS verification code.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Double-check that the number you entered is correct and includes the country code. Some carriers have short-code delays of 2–5 minutes. If it still hasn't arrived, tap "Resend code" after 60 seconds. If your carrier blocks short-code messages, use "Sign in with email" instead.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>I can't find my friend by phone number.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Your friend needs to (a) have a Kilo account, and (b) have verified the phone number you have saved for them. If the number in your contacts is different from the one on their Kilo account, they won't show up in friend search. Ask them to check which number is on their account in <em>Settings → Account</em>.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Receipt scanning isn't picking up items correctly.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>A few tips that dramatically improve OCR accuracy:</p>
+              <ul>
+                <li>Good lighting, no glare on the paper.</li>
+                <li>Flatten the receipt before scanning.</li>
+                <li>Fill the camera frame with the receipt.</li>
+                <li>Scan the receipt the right way up, not sideways.</li>
+              </ul>
+              <p>You can always edit line items manually after scanning — tap any row to correct it.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>I'm not getting push notifications.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Check two places:</p>
+              <ol>
+                <li>Your device settings: iOS Settings → Notifications → Kilo → Allow Notifications. On Android, Settings → Apps → Kilo → Notifications.</li>
+                <li>Inside Kilo: <em>Settings → Notifications</em>. Make sure the categories you care about are enabled.</li>
+              </ol>
+              <p>If both look right and you're still missing notifications, toggle them off and on once, or sign out and back in.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>My card was declined but the bank says nothing is wrong.</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Stripe's fraud detection (Radar) sometimes flags a transaction even when the card itself is fine — for example, if the billing address on file doesn't match, or if your bank hasn't seen Kilo before. Fixes:</p>
+              <ol>
+                <li>Re-enter your card details carefully, including ZIP / postal code.</li>
+                <li>Call your bank and tell them to expect a charge from "Kilo" or "Stripe*Kilo."</li>
+                <li>Try a different payment method.</li>
+              </ol>
+              <p>If it's still failing, email <a href="mailto:support@getkilo.app">support@getkilo.app</a> and we'll look up the specific decline reason on our end.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= PRIVACY & DATA ========= -->
+      <section id="privacy-help" class="help-category" data-category="Privacy & data">
+        <header class="help-category-header">
+          <div class="section-label">Privacy &amp; data</div>
+          <h2>What we know, and what we don't.</h2>
+          <p>Short answers — the full details are in our <a href="./privacy.html">Privacy Policy</a>.</p>
+        </header>
+
+        <div class="help-articles">
+          <details class="help-article">
+            <summary class="help-q">
+              <span>What data does Kilo collect about me?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Your name, email, phone number, profile photo, the splits you create or join, the cards you've added (only the last 4 digits — Stripe stores the full number), your device and app version, and aggregated usage analytics. Full breakdown in the <a href="./privacy.html#collect">Privacy Policy §3</a>.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Who can see my splits?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Only the other Members of that specific split — they see your display name, profile photo, and the amounts you owe or are owed in that split. They don't see your email, phone number, payment details, or any other splits you're part of.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Is my full card number stored on Kilo's servers?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>No. Full card numbers are tokenized and stored by Stripe (which is PCI-DSS Level 1 certified). Kilo only ever sees the last 4 digits, card brand, and expiry, which is what we show in the app.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>How does Kilo handle my contacts?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>Your contacts stay on your device. When you use "Find friends on Kilo," the app hashes each phone number locally with SHA-256 and sends only the hashes to our servers to look for matches. Hashes that don't match are deleted within 24 hours. The names and raw phone numbers in your address book never leave your device.</p>
+              <p>Step-by-step in the <a href="./privacy.html#collect-contacts">Privacy Policy §3.5</a>.</p>
+            </div>
+          </details>
+
+          <details class="help-article">
+            <summary class="help-q">
+              <span>Does Kilo sell my data?</span>
+              <span class="help-chev" aria-hidden="true"></span>
+            </summary>
+            <div class="help-a">
+              <p>No. We don't sell your data, and we don't "share" it for cross-context behavioral advertising under the CCPA/CPRA definition. We honor Global Privacy Control signals from browsers that send them.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ========= CONTACT CTA ========= -->
+      <section id="contact-help" class="help-contact">
+        <div class="help-contact-inner">
+          <div class="section-label">Still stuck?</div>
+          <h2>Our team will get back to you.</h2>
+          <p>We read every message. Expect a reply within one business day.</p>
+          <div class="help-contact-grid">
+            <a class="help-contact-card" href="mailto:support@getkilo.app">
+              <div class="help-contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+              </div>
+              <div>
+                <div class="help-contact-title">General support</div>
+                <div class="help-contact-meta">support@getkilo.app</div>
+              </div>
+            </a>
+            <a class="help-contact-card" href="mailto:security@getkilo.app">
+              <div class="help-contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+              </div>
+              <div>
+                <div class="help-contact-title">Security concerns</div>
+                <div class="help-contact-meta">security@getkilo.app</div>
+              </div>
+            </a>
+            <a class="help-contact-card" href="mailto:privacy@getkilo.app">
+              <div class="help-contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+              </div>
+              <div>
+                <div class="help-contact-title">Privacy questions</div>
+                <div class="help-contact-meta">privacy@getkilo.app</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="logo" href="./index.html" style="color: white;">Kilo</a>
+          <div class="footer-tagline">Splits, simplified.<br />For the way you live now.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="./index.html#how">How it works</a>
+          <a href="./index.html#features">Features</a>
+          <a href="./index.html#pricing">Pricing</a>
+          <a href="./index.html#download">Download</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Press</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="./index.html#faq">FAQ</a>
+          <a href="./help.html" aria-current="page">Help center</a>
+          <a href="#">Status</a>
+          <a href="mailto:hello@kilo.app">hello@kilo.app</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="#">Security</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Kilo, Inc. All rights reserved.</div>
+        <div>Payments powered by Stripe</div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

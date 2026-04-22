@@ -26,6 +26,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         privacy: resolve(__dirname, "privacy.html"),
         terms: resolve(__dirname, "terms.html"),
+        help: resolve(__dirname, "help.html"),
       },
     },
   },
