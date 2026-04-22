@@ -85,3 +85,55 @@ if (nav) {
   window.addEventListener("resize", updateNavColor);
   updateNavColor();
 }
+
+// Scroll reveal animations (Apple-style)
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealTargets = document.querySelectorAll(".reveal, .reveal-stagger");
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  revealTargets.forEach((el) => io.observe(el));
+
+  // Subtle parallax on the floating phone while hero is visible
+  const phoneStage = document.querySelector(".phone-stage");
+  const hero = document.querySelector(".hero");
+  if (phoneStage && hero) {
+    let ticking = false;
+    const updatePhoneParallax = () => {
+      const rect = hero.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) {
+        ticking = false;
+        return;
+      }
+      const scrolled = Math.max(0, -rect.top);
+      const offset = scrolled * 0.12;
+      phoneStage.style.transform = `translate3d(0, ${offset}px, 0)`;
+      ticking = false;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updatePhoneParallax);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
+}
