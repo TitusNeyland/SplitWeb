@@ -1,4 +1,7 @@
 import "./style.css";
+import { hydrateServiceIcons } from "./serviceIcons.js";
+
+hydrateServiceIcons();
 
 // FAQ accordion
 document.querySelectorAll(".faq-item").forEach((item) => {
@@ -329,3 +332,46 @@ if (helpSearch) {
     }
   }
 }
+
+// Back-to-top button — appears once the user has scrolled past
+// one viewport height; smooth-scrolls to the top on click (or
+// jumps instantly for users who prefer reduced motion).
+(() => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "back-to-top";
+  btn.setAttribute("aria-label", "Back to top");
+  btn.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
+  document.body.appendChild(btn);
+
+  const threshold = () => Math.max(400, window.innerHeight * 0.6);
+  let visible = false;
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const shouldShow = window.scrollY > threshold();
+    if (shouldShow !== visible) {
+      visible = shouldShow;
+      btn.classList.toggle("visible", shouldShow);
+    }
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  });
+})();

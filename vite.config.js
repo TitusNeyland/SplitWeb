@@ -27,6 +27,8 @@ export default defineConfig({
         privacy: resolve(__dirname, "privacy.html"),
         terms: resolve(__dirname, "terms.html"),
         help: resolve(__dirname, "help.html"),
+        security: resolve(__dirname, "security.html"),
+        cookies: resolve(__dirname, "cookies.html"),
       },
     },
   },

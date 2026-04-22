@@ -374,15 +374,18 @@ h2 .italic { color: var(--purple-600); }
 .chat-title { font-weight: 600; color: var(--purple-900); font-size: 15px; }
 .chat-sub { font-size: 12px; color: #9ca3af; }
 .chat-msg {
-  max-width: 75%;
-  padding: 10px 14px;
-  border-radius: 16px;
+  position: relative;
+  max-width: 78%;
+  width: fit-content;
+  padding: 11px 16px;
+  border-radius: 20px;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(26, 11, 46, 0.06);
 }
 .chat-msg.them {
-  background: #f0f0f0;
+  background: #e8e9ee;
   color: var(--purple-900);
   border-bottom-left-radius: 4px;
 }
@@ -391,11 +394,53 @@ h2 .italic { color: var(--purple-600); }
   color: var(--white);
   margin-left: auto;
   border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 6px rgba(124, 92, 232, 0.25);
 }
 .chat-msg .sender {
   font-size: 11px; font-weight: 700;
   opacity: 0.7;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+}
+.chat-msg.you .sender { opacity: 0.85; }
+.chat-msg.them .sender { color: var(--purple-500); opacity: 0.9; }
+
+/* Chat bubble tails — iMessage-style crescent */
+.chat-msg.them::before,
+.chat-msg.you::before,
+.chat-msg.them::after,
+.chat-msg.you::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 18px;
+}
+
+/* THEM: tail on bottom-left */
+.chat-msg.them::before {
+  left: -7px;
+  width: 18px;
+  background: #e8e9ee;
+  border-bottom-right-radius: 18px 14px;
+}
+.chat-msg.them::after {
+  left: -22px;
+  width: 22px;
+  background: var(--white);
+  border-bottom-right-radius: 12px;
+}
+
+/* YOU: tail on bottom-right */
+.chat-msg.you::before {
+  right: -7px;
+  width: 18px;
+  background: var(--purple-500);
+  border-bottom-left-radius: 18px 14px;
+}
+.chat-msg.you::after {
+  right: -22px;
+  width: 22px;
+  background: var(--white);
+  border-bottom-left-radius: 12px;
 }
 .chat-indicator {
   font-size: 11px; color: #9ca3af;
@@ -430,9 +475,31 @@ h2 .italic { color: var(--purple-600); }
   display: flex; align-items: center; gap: 12px;
 }
 .step-visual-icon {
-  width: 36px; height: 36px; border-radius: 10px;
+  width: 36px; height: 36px; border-radius: 28%;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px;
+  overflow: hidden;
+}
+.step-avatars {
+  display: flex;
+  margin-right: 8px;
+}
+.step-avatars .step-visual-icon {
+  border-radius: 50%;
+}
+
+/* Service icons — SVG glyph sized to 58% of the container,
+   mirroring GLYPH_RATIO in the mobile ServiceIcon component. */
+[data-service] {
+  line-height: 1;
+}
+[data-service] > svg {
+  width: 58%;
+  height: 58%;
+  display: block;
+}
+[data-service].has-glyph {
+  font-size: 0;
 }
 
 /* FEATURE DEEP DIVE */
@@ -535,9 +602,10 @@ h2 .italic { color: var(--purple-600); }
 }
 .fd-card-sub-row:last-child { border-bottom: none; }
 .fd-sub-icon {
-  width: 32px; height: 32px; border-radius: 8px;
+  width: 32px; height: 32px; border-radius: 28%;
   display: flex; align-items: center; justify-content: center;
   color: var(--white); font-weight: 700; font-size: 13px;
+  overflow: hidden;
 }
 .fd-sub-name {
   flex: 1;
@@ -817,10 +885,11 @@ h2 .italic { color: var(--purple-600); }
   display: flex; align-items: center; gap: 14px;
 }
 .squad-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 28%;
   background: var(--white);
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; color: var(--purple-700);
+  overflow: hidden;
 }
 .squad-info { flex: 1; }
 .squad-name { font-size: 14px; font-weight: 600; }
@@ -1868,12 +1937,82 @@ footer { background: var(--black); padding: 60px 40px 40px; color: var(--purple-
 
 /* Print-friendly — one clean column, no nav/footer */
 @media print {
-  nav, footer, .legal-toc, .legal-hero-actions, .skip-link { display: none !important; }
+  nav, footer, .legal-toc, .legal-hero-actions, .skip-link, .back-to-top { display: none !important; }
   .legal-hero { background: none; color: var(--black); padding: 24px 0; }
   .legal-hero h1, .legal-hero h1 .italic { color: var(--black); }
   .legal-shell { display: block; padding: 0 24px; }
   .legal-content { max-width: none; }
   .legal-section { break-inside: avoid-page; border-top-color: rgba(0,0,0,0.15); }
   a { color: var(--black) !important; text-decoration: underline; }
+}
+
+/* BACK TO TOP — floating button, injected by main.js on every page. */
+.back-to-top {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right, 24px));
+  bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--purple-900);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(26, 11, 46, 0.22), 0 2px 6px rgba(26, 11, 46, 0.12);
+  opacity: 0;
+  transform: translateY(12px) scale(0.92);
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2),
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: var(--purple-500);
+  box-shadow: 0 14px 32px rgba(124, 92, 232, 0.35), 0 3px 8px rgba(26, 11, 46, 0.15);
+  transform: translateY(-2px) scale(1);
+}
+.back-to-top:active {
+  transform: translateY(0) scale(0.96);
+}
+.back-to-top:focus-visible {
+  outline: 2px solid var(--purple-500);
+  outline-offset: 3px;
+}
+.back-to-top svg {
+  transition: transform 0.2s ease;
+}
+.back-to-top:hover svg {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    right: max(16px, env(safe-area-inset-right, 16px));
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+  .back-to-top.visible { transform: none; }
+  .back-to-top:hover { transform: none; }
+  .back-to-top:hover svg { transform: none; }
 }
 

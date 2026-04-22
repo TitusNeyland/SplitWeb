@@ -176,7 +176,7 @@
     </section>
 
     <!-- SOCIAL PROOF STRIP -->
-    <section class="social-proof reveal-stagger" style="max-width: none;">
+    <!-- <section class="social-proof reveal-stagger" style="max-width: none;">
       <div class="sp-label">Trusted by 50,000+ squads</div>
       <div class="sp-logos">
         <div class="sp-logo">TechCrunch</div>
@@ -185,7 +185,7 @@
         <div class="sp-logo">Fast Company</div>
         <div class="sp-logo">Morning Brew</div>
       </div>
-    </section>
+    </section> -->
 
     <!-- THE PROBLEM -->
     <section class="problem" style="max-width: none;">
@@ -243,7 +243,7 @@
           <h3>Add the subscription</h3>
           <p>Netflix, Spotify, Disney+, YouTube Premium — pick from the catalog or add your own service.</p>
           <div class="step-visual">
-            <div class="step-visual-icon" style="background: #e50914; color: white;">N</div>
+            <div class="step-visual-icon" data-service="Netflix Premium" style="background: #e50914; color: white;">N</div>
             <div style="font-size: 13px; color: var(--purple-900); font-weight: 500;">Netflix Premium · $26.99</div>
           </div>
         </div>
@@ -252,7 +252,7 @@
           <h3>Invite your squad</h3>
           <p>Send an invite link. They join, add a card, and the split is locked in. Everybody sees who paid what.</p>
           <div class="step-visual">
-            <div style="display: flex; margin-right: 8px;">
+            <div class="step-avatars">
               <div class="step-visual-icon" style="background: #7c5ce8; color: white; margin-right: -12px; border: 2px solid white;">D</div>
               <div class="step-visual-icon" style="background: #10b981; color: white; margin-right: -12px; border: 2px solid white;">T</div>
               <div class="step-visual-icon" style="background: #fb923c; color: white; border: 2px solid white;">J</div>
@@ -295,7 +295,7 @@
           <div class="fd-card">
             <div class="fd-card-title">Your subscriptions</div>
             <div class="fd-card-sub-row">
-              <div class="fd-sub-icon" style="background: #e50914;">N</div>
+              <div class="fd-sub-icon" data-service="Netflix Premium" style="background: #e50914;">N</div>
               <div style="flex: 1;">
                 <div class="fd-sub-name">Netflix Premium</div>
                 <div class="fd-sub-meta">4 members · bills May 1</div>
@@ -303,7 +303,7 @@
               <div class="fd-sub-amount">$6.74</div>
             </div>
             <div class="fd-card-sub-row">
-              <div class="fd-sub-icon" style="background: #1db954;">S</div>
+              <div class="fd-sub-icon" data-service="Spotify Family" style="background: #1db954;">S</div>
               <div style="flex: 1;">
                 <div class="fd-sub-name">Spotify Family</div>
                 <div class="fd-sub-meta">5 members · bills May 12</div>
@@ -311,7 +311,7 @@
               <div class="fd-sub-amount">$3.40</div>
             </div>
             <div class="fd-card-sub-row">
-              <div class="fd-sub-icon" style="background: #107c10;">X</div>
+              <div class="fd-sub-icon" data-service="Xbox Game Pass" style="background: #107c10;">X</div>
               <div style="flex: 1;">
                 <div class="fd-sub-name">Xbox Game Pass</div>
                 <div class="fd-sub-meta">2 members · bills May 14</div>
@@ -532,7 +532,7 @@
         <div class="squad-title">The<br />Gamer House</div>
         <div class="squad-list">
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #52b043; color: white;">G</div>
+            <div class="squad-avatar" data-service="Xbox Game Pass" style="background: #52b043; color: white;">G</div>
             <div class="squad-info">
               <div class="squad-name">Xbox Game Pass</div>
               <div class="squad-service">Bills May 14 · 4 way</div>
@@ -540,7 +540,7 @@
             <div class="squad-price">$4.25</div>
           </div>
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #5865f2; color: white;">D</div>
+            <div class="squad-avatar" data-service="Discord Nitro" style="background: #5865f2; color: white;">D</div>
             <div class="squad-info">
               <div class="squad-name">Discord Nitro</div>
               <div class="squad-service">Bills May 20 · 4 way</div>
@@ -548,7 +548,7 @@
             <div class="squad-price">$2.50</div>
           </div>
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #1db954; color: white;">S</div>
+            <div class="squad-avatar" data-service="Spotify Family" style="background: #1db954; color: white;">S</div>
             <div class="squad-info">
               <div class="squad-name">Spotify Family</div>
               <div class="squad-service">Bills May 28 · 4 way</div>
@@ -681,23 +681,20 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="#">About</a>
-          <a href="#">Press</a>
-          <a href="#">Careers</a>
           <a href="#">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Support</h4>
           <a href="#faq">FAQ</a>
           <a href="./help.html">Help center</a>
-          <a href="#">Status</a>
           <a href="mailto:hello@kilo.app">hello@kilo.app</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <a href="./privacy.html">Privacy</a>
           <a href="./terms.html">Terms</a>
-          <a href="#">Security</a>
-          <a href="#">Cookies</a>
+          <a href="./security.html">Security</a>
+          <a href="./cookies.html">Cookies</a>
         </div>
       </div>
       <div class="footer-bottom">

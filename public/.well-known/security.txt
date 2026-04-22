@@ -1,0 +1,21 @@
+# Kilo security contact — RFC 9116
+# https://kilo.app/security
+
+Contact: mailto:security@getkilo.app
+Contact: https://kilo.app/security
+
+Expires: 2027-04-22T00:00:00.000Z
+
+Preferred-Languages: en
+
+Canonical: https://kilo.app/.well-known/security.txt
+
+Policy: https://kilo.app/security#disclosure
+Acknowledgments: https://kilo.app/security#disclosure
+
+Encryption: https://kilo.app/.well-known/kilo-security.asc
+
+# If you believe you have found a security vulnerability in a Kilo
+# product or service, please report it to security@getkilo.app. See
+# https://kilo.app/security for scope, rules of engagement, and our
+# safe-harbor commitment to good-faith security researchers.

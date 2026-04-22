@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How Kilo protects your money and your data. Our payment security, encryption, account controls, vendor list, and how to report a vulnerability."
+    />
+    <meta name="theme-color" content="#1a0b2e" />
+
+    <meta property="og:title" content="Kilo — Security" />
+    <meta property="og:description" content="How Kilo protects your money and your data." />
+    <meta property="og:type" content="website" />
+
+    <title>Security — Kilo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body class="legal-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- NAV -->
+    <nav id="mainNav" class="on-dark" aria-label="Primary">
+      <a class="logo" href="./index.html">Kilo</a>
+      <div class="nav-links">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#features">Features</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a href="./index.html#faq">FAQ</a>
+        <a href="./index.html#download" class="nav-cta">Get the App</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="legal-hero">
+      <div class="legal-hero-inner">
+        <div class="section-label">Trust</div>
+        <h1>Your money<br />and your data,<br /><span class="italic">protected.</span></h1>
+        <p class="legal-meta">
+          <span><strong>Last reviewed:</strong> April 22, 2026</span>
+          <span aria-hidden="true">·</span>
+          <span><strong>Next review:</strong> October 2026</span>
+          <span aria-hidden="true">·</span>
+          <span><strong>Version:</strong> 1.0</span>
+        </p>
+        <p class="legal-lede">
+          Kilo handles money and personal information, so security isn't a
+          feature — it's the foundation. This page documents how we protect
+          your account, what the providers behind us do, and how to reach us
+          if you see something wrong. Where we haven't built something yet,
+          we say so.
+        </p>
+        <div class="legal-hero-actions">
+          <a href="#toc" class="store-btn secondary">Jump to contents</a>
+          <a href="mailto:security@getkilo.app" class="store-btn secondary">Report a vulnerability</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="legal-shell">
+      <!-- TOC -->
+      <aside class="legal-toc" aria-label="Table of contents">
+        <div class="legal-toc-inner">
+          <h2 class="legal-toc-title" id="toc">Contents</h2>
+          <button type="button" class="legal-toc-toggle" aria-expanded="false" aria-controls="legalTocList">
+            <span>Show sections</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ol id="legalTocList" class="legal-toc-list">
+            <li><a href="#tldr">The 15-second version</a></li>
+            <li><a href="#money">1. How your money is protected</a></li>
+            <li><a href="#data">2. How your data is protected</a></li>
+            <li><a href="#account">3. Account security</a></li>
+            <li><a href="#app">4. App-level protections</a></li>
+            <li><a href="#fraud">5. Fraud prevention</a></li>
+            <li><a href="#privacy">6. Privacy protections</a></li>
+            <li><a href="#vendors">7. Third-party security</a></li>
+            <li><a href="#engineering">8. Engineering practices</a></li>
+            <li><a href="#compliance">9. Compliance &amp; certifications</a></li>
+            <li><a href="#incident">10. Incident response</a></li>
+            <li><a href="#disclosure">11. Responsible disclosure</a></li>
+            <li><a href="#phishing">12. Phishing &amp; scam awareness</a></li>
+            <li><a href="#subprocessors">13. Subprocessors</a></li>
+            <li><a href="#contact">14. Contact</a></li>
+          </ol>
+        </div>
+      </aside>
+
+      <article class="legal-content">
+
+        <!-- TL;DR -->
+        <section id="tldr" class="legal-section legal-summary">
+          <div class="section-label">At a glance</div>
+          <h2>The 15-second version.</h2>
+          <ul class="legal-tldr">
+            <li><strong>We never see or store your card number.</strong> <a href="https://stripe.com/docs/security" rel="noopener">Stripe</a> does — and they're PCI-DSS Level 1 certified.</li>
+            <li><strong>Your data is encrypted in transit and at rest.</strong> TLS 1.2+ on every connection; AES-256 on every stored record.</li>
+            <li><strong>You can lock the app</strong> with Face ID, Touch ID, or a 6-digit PIN.</li>
+            <li><strong>We never sell your data.</strong> No ad networks, no data brokers, no exceptions.</li>
+            <li><strong>You can delete your account any time,</strong> from inside the app, in one tap.</li>
+          </ul>
+          <p class="legal-muted">
+            No product is ever "100% secure" — and we won't tell you
+            otherwise. What we will do is document what we actually do,
+            name the vendors we rely on, and tell you when we're not there
+            yet.
+          </p>
+        </section>
+
+        <!-- 1. MONEY -->
+        <section id="money" class="legal-section">
+          <div class="section-label">Section 1</div>
+          <h2>How your money is protected.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Kilo never handles raw card data. Stripe does — a PCI-DSS Level 1 processor. You keep your bank's zero-liability protections on every charge.
+          </div>
+
+          <h3>Stripe handles every card transaction</h3>
+          <ul class="legal-list">
+            <li><strong>Kilo never sees or stores your full card number.</strong> Card details go from your device directly to <a href="https://stripe.com/docs/security" rel="noopener">Stripe</a> over TLS, using Stripe's SDK. The full PAN never reaches our servers.</li>
+            <li><strong>PCI-DSS Level 1</strong> — Stripe is certified at the highest compliance level for card processors, audited annually by a qualified security assessor.</li>
+            <li><strong>Tokenization.</strong> Stripe returns an opaque token that Kilo stores as the reference to your card. For display only, we keep the brand (e.g., "Visa"), the last 4 digits, and the expiry month/year. We never see or store the full PAN or CVV.</li>
+            <li><strong>TLS 1.2+</strong> is enforced on every payment-related connection, with modern cipher suites and HSTS at the browser edge.</li>
+          </ul>
+
+          <h3>Apple Pay &amp; Google Pay</h3>
+          <p>
+            Where supported, we accept <strong>Apple Pay</strong> and
+            <strong>Google Pay</strong>. These use device-bound tokens — a
+            DAN (Device Account Number) that is unique to your device, not
+            your real card number, and is authorized per-transaction with
+            Face ID, Touch ID, or your device PIN. Kilo sees only the
+            tokenized transaction.
+          </p>
+
+          <h3>Strong Customer Authentication</h3>
+          <p>
+            For users in the EU, UK, and other regions that require it,
+            Stripe applies <strong>3-D Secure 2</strong> / <strong>SCA</strong>
+            (Strong Customer Authentication) where the card network requires
+            it. You'll see a challenge from your bank before a charge
+            completes on qualifying transactions.
+          </p>
+
+          <h3>Fraud screening</h3>
+          <ul class="legal-list">
+            <li><strong>Stripe Radar</strong> — every transaction is scored by Stripe's machine-learning fraud system. High-risk charges are declined or flagged for review.</li>
+            <li><strong>Explicit authorization.</strong> One-off charges require an authorization in-app before they run. Recurring charges are governed by the rules of the underlying card network and your mandate history with Stripe.</li>
+            <li><strong>Network-level protection.</strong> Your bank's <strong>zero-liability</strong> protection for unauthorized charges still applies to anything paid with your card through Kilo — reach out to your card issuer in addition to us if that happens.</li>
+          </ul>
+
+          <h3>If you see an unauthorized charge</h3>
+          <ol class="legal-list legal-list-num">
+            <li>Open the transaction in Kilo and tap <em>Report issue</em>, or email <a href="mailto:support@getkilo.app">support@getkilo.app</a>.</li>
+            <li>Separately, contact your card issuer (the number on the back of your card) and request a chargeback.</li>
+            <li>We'll coordinate with Stripe to investigate; most disputed charges are resolved within 7–14 business days.</li>
+          </ol>
+
+          <div class="legal-callout legal-callout-warning">
+            <strong>Kilo is not a bank.</strong> Kilo is a technology
+            platform. Underlying money movement is handled by Stripe, and
+            funds in transit are covered by Stripe's safeguards — not by
+            the FDIC. We don't hold your money; we route it. If you want
+            the specifics, see §7 of the <a href="./terms.html">Terms of
+            Service</a>.
+          </div>
+        </section>
+
+        <!-- 2. DATA -->
+        <section id="data" class="legal-section">
+          <div class="section-label">Section 2</div>
+          <h2>How your data is protected.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Encrypted on the wire, encrypted on disk, and tightly scoped internally. Your phone contacts are hashed on-device before they ever leave your phone.
+          </div>
+
+          <h3>Encryption</h3>
+          <ul class="legal-list">
+            <li><strong>In transit.</strong> <strong>TLS 1.2+</strong> on every connection, enforced via HTTPS-only endpoints and HSTS. The Kilo mobile app uses <strong>certificate pinning</strong> so even a compromised network can't sit between you and us.</li>
+            <li><strong>At rest.</strong> <strong>AES-256</strong> encryption across Firebase Firestore and Firebase Storage, with keys managed by Google. [PLACEHOLDER: add CMEK note if you use Customer-Managed Encryption Keys.]</li>
+            <li><strong>Passwords.</strong> Stored as salted hashes by <a href="https://firebase.google.com/docs/auth/password-hashing" rel="noopener">Firebase Authentication</a> (modified scrypt with per-user salt plus a server-side pepper). We never see, store, or transmit your password in plain text — if you forget it, we reset it, not recover it.</li>
+            <li><strong>Contacts.</strong> When you grant contacts access to find friends on Kilo, phone numbers are <strong>SHA-256 hashed on your device</strong> before being sent to us. We receive and store only the hashes, not your actual contact list.</li>
+            <li><strong>Device secrets.</strong> Auth tokens, refresh tokens, and biometric-protected flags are stored in the <strong>iOS Keychain</strong> and <strong>Android Keystore</strong> via <code>expo-secure-store</code>. They never land in plain files, local storage, or app preferences.</li>
+          </ul>
+
+          <h3>Access controls</h3>
+          <ul class="legal-list">
+            <li><strong>Least privilege.</strong> Production data access is scoped to a small on-call team and is granted per-role, not per-person.</li>
+            <li><strong>Two-factor authentication</strong> is required on every internal account that can reach production — hardware-backed where available.</li>
+            <li><strong>Audit logs.</strong> Every administrative action against production is logged to an append-only audit trail.</li>
+            <li><strong>Onboarding / offboarding.</strong> Access is provisioned on day one through a checklist that includes background-verified identity; when someone leaves, credentials, SSH keys, and cloud permissions are revoked the same day.</li>
+            <li><strong>No standing access to user financial data.</strong> Employees cannot browse user splits, balances, or card metadata outside of an active support case.</li>
+          </ul>
+
+          <h3>Infrastructure</h3>
+          <ul class="legal-list">
+            <li><strong>Google Cloud &amp; Firebase.</strong> Our backend runs on Google's infrastructure, which is independently certified for <a href="https://cloud.google.com/security/compliance" rel="noopener">SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27017, ISO 27018, and HIPAA</a>, among others.</li>
+            <li><strong>Regional redundancy.</strong> Firestore replicates every document across multiple zones in our primary region ([<code>us-central1</code>]) for durability and automatic failover.</li>
+            <li><strong>Daily encrypted backups,</strong> retained for [30] days, with disaster-recovery restores tested at least annually.</li>
+            <li><strong>Environment isolation.</strong> Separate Firebase projects for development, staging, and production — no shared databases, no shared credentials.</li>
+            <li><strong>Edge protection.</strong> Google's global load balancers provide DDoS mitigation and TLS termination in front of every public endpoint.</li>
+          </ul>
+        </section>
+
+        <!-- 3. ACCOUNT -->
+        <section id="account" class="legal-section">
+          <div class="section-label">Section 3</div>
+          <h2>Account security.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> A few settings in the Kilo app do most of the work. Biometric lock, strong password, verified email.
+          </div>
+
+          <h3>Sign-in options</h3>
+          <ul class="legal-list">
+            <li><strong>Email and password</strong> with a minimum of <strong>8 characters</strong>, including a mix of letters and numbers. Passwords are checked against known breached-password corpuses at sign-up and blocked if compromised.</li>
+            <li><strong>Sign in with Apple</strong> and <strong>Sign in with Google</strong> — passwordless options that let Apple and Google handle identity. Kilo only receives a verified identity token.</li>
+            <li><strong>Email verification is required</strong> before you can send or receive money on Kilo.</li>
+            <li><strong>Phone verification</strong> is required for finding friends by phone number and for certain high-risk actions.</li>
+          </ul>
+
+          <h3>Extra protection for your device</h3>
+          <ul class="legal-list">
+            <li><strong>Biometric unlock.</strong> Face ID, Touch ID, or Android fingerprint, via <code>expo-local-authentication</code>. Biometric data never leaves your device — Kilo only receives a yes/no signal from your OS.</li>
+            <li><strong>6-digit PIN</strong> as a fallback or second layer — <em>Settings → Security</em>.</li>
+            <li><strong>Sign out everywhere</strong> — invalidate every other session in one tap, from <em>Settings → Security</em>.</li>
+          </ul>
+
+          <h3>On our roadmap</h3>
+          <ul class="legal-list">
+            <li><strong>Two-factor authentication (SMS &amp; authenticator app)</strong> — planned for Q3 2026. Sign in with Apple / Google already provide equivalent protection for those providers.</li>
+            <li><strong>Active sessions list</strong> — see every device currently signed in to your account and revoke individually. Planned for Q3 2026.</li>
+            <li><strong>New-device login alerts</strong> — planned alongside the sessions list.</li>
+          </ul>
+          <p class="legal-muted">We'll update this section as each lands — we'd rather say "not yet" than pretend.</p>
+
+          <h3>Your data, your choice</h3>
+          <ul class="legal-list">
+            <li><strong>Delete your account</strong> from <em>Settings → Account → Delete account</em>. This is self-serve, takes effect within 30 days, and removes your personal data per the <a href="./privacy.html#retention">Privacy Policy §8</a>.</li>
+            <li><strong>Export your data</strong> at any time from <em>Settings → Privacy → Download my data</em>. You'll get a JSON archive with your profile, splits, settlements, and activity history.</li>
+          </ul>
+        </section>
+
+        <!-- 4. APP -->
+        <section id="app" class="legal-section">
+          <div class="section-label">Section 4</div>
+          <h2>App-level protections.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> The Kilo app is hardened beyond the login screen — secure key storage, signed updates, and protections against common mobile attacks.
+          </div>
+          <ul class="legal-list">
+            <li><strong>Secure key storage.</strong> Every session token and biometric flag lives in the <strong>iOS Keychain</strong> or <strong>Android Keystore</strong>, hardware-backed where the device supports it.</li>
+            <li><strong>Certificate pinning.</strong> The app refuses to connect to our API if the TLS certificate chain has been tampered with — neutralizing a whole class of man-in-the-middle attacks.</li>
+            <li><strong>App binary integrity.</strong> Kilo is distributed exclusively through the Apple App Store and Google Play. Both platforms sign and verify every release; sideloaded or modified builds will not pass signature checks.</li>
+            <li><strong>Signed over-the-air updates.</strong> Minor updates ship through <a href="https://expo.dev/eas" rel="noopener">Expo EAS Update</a>, which cryptographically signs every update bundle. The app refuses to run an unsigned payload.</li>
+            <li><strong>Deep-link validation.</strong> All <em>kilo://</em>, Universal Link (iOS), and App Link (Android) URLs are validated server-side before the app takes action — so a malicious link can't silently trigger an in-app transfer.</li>
+            <li><strong>Jailbreak / root detection.</strong> [PLACEHOLDER: "The app detects common jailbreak / root indicators and warns you when it runs on a compromised device." — keep this line only if you actually implement it.]</li>
+            <li><strong>Auto-lock.</strong> [PLACEHOLDER: "The app re-prompts for biometric / PIN after 5 minutes in the background." — keep only if implemented.]</li>
+            <li><strong>Screenshot protection.</strong> [PLACEHOLDER: "Sensitive screens (card details, settlement history) are blanked in the app-switcher preview on iOS and block screenshots on Android." — keep only if implemented.]</li>
+          </ul>
+        </section>
+
+        <!-- 5. FRAUD -->
+        <section id="fraud" class="legal-section">
+          <div class="section-label">Section 5</div>
+          <h2>Fraud prevention.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Layered defenses at the payment, account, and behavior levels.
+          </div>
+          <ul class="legal-list">
+            <li><strong>Stripe Radar</strong> scores every payment in real time using a model trained across billions of transactions. High-risk charges are declined automatically.</li>
+            <li><strong>Device fingerprinting.</strong> A hashed fingerprint of the device (no personal identifiers) lets us detect account-takeover attempts from new hardware.</li>
+            <li><strong>Velocity limits.</strong> Rate limits on sensitive actions — sending invites, adding payment methods, creating accounts, initiating transfers — cap automated abuse before it reaches users.</li>
+            <li><strong>Cooling-off on new payment methods.</strong> Cards added in the last [24] hours are held to tighter transaction limits until verified; large transfers may require a step-up authentication challenge.</li>
+            <li><strong>Anomaly detection.</strong> Unusual patterns — logins from new countries, rapid creation of high-value splits, failed-then-successful card authorizations — trigger additional verification or manual review.</li>
+            <li><strong>Step-up verification</strong> for high-risk actions: changing your payout destination, adding a second phone number, or approving an unusually large settlement.</li>
+            <li><strong>Account suspension.</strong> Accounts that show clear signs of fraud — bot-driven signups, stolen-card use, coordinated abuse — are blocked and reviewed.</li>
+          </ul>
+        </section>
+
+        <!-- 6. PRIVACY -->
+        <section id="privacy" class="legal-section">
+          <div class="section-label">Section 6</div>
+          <h2>Privacy protections.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> No selling, no ad networks, your contacts stay yours.
+          </div>
+          <ul class="legal-list">
+            <li><strong>We never sell your data.</strong> Not to advertisers, not to data brokers, not for "improving partner experiences."</li>
+            <li><strong>No third-party ad tracking.</strong> No Facebook Pixel, no Google Ads conversion tags, no third-party ad SDKs in the Kilo app.</li>
+            <li><strong>Contacts are hashed before leaving your device</strong> (SHA-256). We never receive your actual contact list.</li>
+            <li><strong>You control your notifications</strong> — push, email, and in-app preferences are separate and individually toggleable.</li>
+            <li><strong>You can export or delete everything</strong> in a single tap, as described in §3.</li>
+          </ul>
+          <p>
+            Full rights, legal bases, and data-subject request processes are
+            documented in the <a href="./privacy.html"><strong>Privacy Policy</strong></a>.
+          </p>
+        </section>
+
+        <!-- 7. VENDORS -->
+        <section id="vendors" class="legal-section">
+          <div class="section-label">Section 7</div>
+          <h2>Third-party security.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> We're honest about what we build and what we trust to providers with stronger security teams than ours. Here's the list.
+          </div>
+          <div class="legal-table-wrap">
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th scope="col">Vendor</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Certifications &amp; references</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><a href="https://stripe.com/docs/security" rel="noopener">Stripe</a></th>
+                  <td>Payments processing, card tokenization, Radar fraud screening</td>
+                  <td>PCI-DSS Level 1 · SOC 1 &amp; 2 · ISO 27001 · <a href="https://stripe.com/privacy-center" rel="noopener">privacy center</a></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="https://cloud.google.com/security/compliance" rel="noopener">Google Firebase / Cloud</a></th>
+                  <td>Authentication, Firestore database, Cloud Storage, Cloud Functions, FCM push</td>
+                  <td>SOC 1 / 2 / 3 · ISO 27001 / 27017 / 27018 · HIPAA · EU-U.S. DPF</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple</a></th>
+                  <td>Sign in with Apple, Apple Push Notification service, iOS Keychain</td>
+                  <td>Platform security — Apple-controlled</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="https://safety.google/" rel="noopener">Google</a></th>
+                  <td>Sign in with Google, Android Keystore</td>
+                  <td>Platform security — Google-controlled</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="https://expo.dev/security" rel="noopener">Expo / EAS</a></th>
+                  <td>Mobile build pipeline, signed OTA updates, push relay</td>
+                  <td>SOC 2 Type II</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="https://sentry.io/security/" rel="noopener">Sentry</a></th>
+                  <td>Crash reporting &amp; error monitoring (scrubbed of PII)</td>
+                  <td>SOC 2 Type II · ISO 27001 · HIPAA · GDPR</td>
+                </tr>
+                <tr>
+                  <th scope="row">[PLACEHOLDER email vendor e.g. <a href="https://postmarkapp.com/security" rel="noopener">Postmark</a>]</th>
+                  <td>Transactional email (verification codes, receipts, security alerts)</td>
+                  <td>[PLACEHOLDER certifications]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="legal-muted">
+            For a full list of every processor that touches user data — including
+            location and purpose — see the <a href="#subprocessors">subprocessors list</a>.
+          </p>
+        </section>
+
+        <!-- 8. ENGINEERING -->
+        <section id="engineering" class="legal-section">
+          <div class="section-label">Section 8</div>
+          <h2>Engineering practices.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Peer-reviewed code, scanned dependencies, isolated environments, and humans trained to care.
+          </div>
+          <ul class="legal-list">
+            <li><strong>Mandatory code review</strong> — every change to the backend or client is reviewed by at least one other engineer before merging.</li>
+            <li><strong>Automated tests</strong> — unit, integration, and end-to-end tests run on every pull request.</li>
+            <li><strong>Dependency scanning</strong> with GitHub Dependabot and automated vulnerability alerts. High-severity CVEs are patched within [7] days.</li>
+            <li><strong>Static analysis (SAST)</strong> runs on every pull request; findings block merges.</li>
+            <li><strong>Secret scanning</strong> in CI and in pre-commit hooks — credentials accidentally committed are detected before they reach a shared branch.</li>
+            <li><strong>Branch protection</strong> on our main branch — no direct pushes, required reviews, required status checks.</li>
+            <li><strong>Environment isolation.</strong> Development, staging, and production are separate Firebase projects with separate credentials. Staging never contains real user data.</li>
+            <li><strong>Infrastructure-as-code.</strong> Cloud Functions, Firestore security rules, and Cloud Run configuration live in version control; production changes go through the same review process as application code.</li>
+            <li><strong>Security awareness training</strong> at onboarding and annually for every employee and contractor.</li>
+            <li><strong>Background checks</strong> [PLACEHOLDER: "are performed on every new hire where local law permits." — keep only if true].</li>
+            <li><strong>Independent penetration testing.</strong> [PLACEHOLDER: "We engage [FIRM] to conduct a third-party application penetration test annually. A summary is available under NDA to enterprise customers." — keep only if true.]</li>
+          </ul>
+        </section>
+
+        <!-- 9. COMPLIANCE -->
+        <section id="compliance" class="legal-section">
+          <div class="section-label">Section 9</div>
+          <h2>Compliance &amp; certifications.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> We map to major privacy regimes and inherit compliance from our core providers. We don't yet hold independent certifications — here's our honest status.
+          </div>
+          <ul class="legal-list">
+            <li><strong>GDPR &amp; UK GDPR.</strong> We operate in line with GDPR's principles — lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity and confidentiality, and accountability. See the <a href="./privacy.html">Privacy Policy</a> for legal bases and your rights.</li>
+            <li><strong>CCPA / CPRA.</strong> California residents have specific rights around their personal information; we honor verifiable consumer requests through <em>Settings → Privacy</em> and at <a href="mailto:privacy@getkilo.app">privacy@getkilo.app</a>. See the <a href="./privacy.html#rights-california">Privacy Policy §10</a>.</li>
+            <li><strong>Apple App Privacy labels.</strong> Our App Store privacy labels match the data collection documented in the Privacy Policy.</li>
+            <li><strong>Google Play Data Safety.</strong> Our Play Store Data Safety disclosures match the data collection documented in the Privacy Policy.</li>
+            <li><strong>PCI-DSS.</strong> Because Kilo never stores, processes, or transmits full card data, our integration follows Stripe's <strong>SAQ-A</strong> eligibility pattern — scope is limited to receiving the token. Stripe holds PCI-DSS Level 1 certification.</li>
+            <li><strong>SOC 2.</strong> [PLACEHOLDER: "Not yet. We plan to complete a SOC 2 Type I audit in [YEAR] and pursue Type II after." — <em>only list SOC 2 status you actually have. Overclaiming here is a federal offense.</em>]</li>
+            <li><strong>ISO 27001.</strong> Not yet. We inherit the ISO 27001, 27017, and 27018 certifications of our underlying Google Cloud infrastructure.</li>
+          </ul>
+          <p class="legal-muted">
+            We don't handle protected health information (no HIPAA),
+            children's data (no COPPA — Kilo is 16+), or education records
+            (no FERPA). Those frameworks don't apply to us, so we won't
+            pretend otherwise.
+          </p>
+        </section>
+
+        <!-- 10. INCIDENT -->
+        <section id="incident" class="legal-section">
+          <div class="section-label">Section 10</div>
+          <h2>Incident response &amp; breach notification.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> 24/7 on-call, a written playbook, and a 72-hour breach-notification commitment.
+          </div>
+          <ul class="legal-list">
+            <li><strong>24/7 on-call engineering.</strong> A rotating on-call engineer is paged automatically when critical services or error rates breach defined thresholds.</li>
+            <li><strong>Incident response playbook.</strong> We maintain a written, internally published IR plan covering triage, containment, eradication, recovery, and communication. The plan is reviewed at least annually.</li>
+            <li><strong>Post-incident reviews.</strong> Every material incident triggers a blameless post-mortem with documented root cause and concrete remediation actions tracked to completion.</li>
+            <li><strong>Breach notification within 72 hours.</strong> If an incident results in unauthorized access to personal data, we will notify affected users and applicable regulators without undue delay — <strong>within 72 hours</strong>, meeting GDPR Article 33 requirements.</li>
+            <li><strong>Status page.</strong> Live service health at [<a href="#"><code>status.getkilo.app</code></a>] (PLACEHOLDER until launched).</li>
+            <li><strong>Public post-mortems.</strong> We commit to publishing post-mortems for any incident that materially affected users, within 30 days of resolution.</li>
+          </ul>
+        </section>
+
+        <!-- 11. DISCLOSURE -->
+        <section id="disclosure" class="legal-section">
+          <div class="section-label">Section 11</div>
+          <h2>Responsible disclosure.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Find a bug, tell us first, and we'll work with you. We won't sue good-faith researchers. We publish a <a href="/.well-known/security.txt"><code>security.txt</code></a>.
+          </div>
+
+          <h3>How to report</h3>
+          <p>
+            Email <a href="mailto:security@getkilo.app"><strong>security@getkilo.app</strong></a>
+            with a description, reproduction steps, and any relevant
+            screenshots, logs, or proof-of-concept. PGP key: [<a href="/.well-known/kilo-security.asc"><code>kilo-security.asc</code></a>].
+          </p>
+          <p>
+            <strong>Response time:</strong> we acknowledge every report
+            within <strong>3 business days</strong> and keep you updated
+            through triage, fix, and deploy.
+          </p>
+          <p>
+            We publish an <a href="/.well-known/security.txt"><strong><code>/.well-known/security.txt</code></strong></a>
+            file per <a href="https://datatracker.ietf.org/doc/html/rfc9116" rel="noopener">RFC 9116</a>
+            so researchers can find our security contact through standard
+            tooling.
+          </p>
+
+          <h3>In scope</h3>
+          <ul class="legal-list">
+            <li>The Kilo iOS and Android apps (latest store release)</li>
+            <li>Our web properties on <code>*.kilo.app</code> and <code>*.getkilo.app</code></li>
+            <li>Kilo Cloud Functions and Firestore security rules</li>
+          </ul>
+
+          <h3>Out of scope</h3>
+          <ul class="legal-list">
+            <li>Social engineering of Kilo employees, customers, or vendors</li>
+            <li>Denial-of-service attacks, volumetric testing, or any attempt to disrupt service for other users</li>
+            <li>Physical attacks against our offices or employees</li>
+            <li>Issues that require physical access to an unlocked user device</li>
+            <li>Findings in third-party services (Stripe, Firebase, Expo, etc.) — please report those directly to the vendor</li>
+            <li>Best-practice reports with no demonstrable security impact (missing headers, lack of rate-limits with no exploit, etc.)</li>
+          </ul>
+
+          <h3>Rules of engagement</h3>
+          <ul class="legal-list">
+            <li>Test only against your own account or a test account you created</li>
+            <li>Stop immediately and notify us if you encounter another user's data</li>
+            <li>Don't modify, exfiltrate, or destroy data that isn't yours</li>
+            <li>Don't publicly disclose until we've had a reasonable chance to fix — typically 90 days, coordinated with you</li>
+            <li>Don't degrade service for other users in the course of your research</li>
+          </ul>
+
+          <h3>Safe harbor</h3>
+          <div class="legal-callout">
+            If you make a good-faith effort to comply with this policy
+            during your security research, we will consider your research
+            authorized, we will work with you to understand and resolve the
+            issue quickly, and <strong>we will not pursue or support legal
+            action against you</strong>. If legal action is initiated by a
+            third party against you in connection with your research under
+            this policy, we will make this authorization known.
+          </div>
+
+          <h3>Recognition</h3>
+          <p>
+            [PLACEHOLDER: "We maintain a researcher hall-of-fame at
+            <code>kilo.app/security/hall-of-fame</code> (with your
+            permission), and we're planning a formal bounty program for
+            launch in [QUARTER YEAR]." — keep only what's true.]
+          </p>
+        </section>
+
+        <!-- 12. PHISHING -->
+        <section id="phishing" class="legal-section">
+          <div class="section-label">Section 12</div>
+          <h2>Phishing &amp; scam awareness.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> A few rules you can count on. If a message doesn't match them, it's not from us.
+          </div>
+          <ul class="legal-list">
+            <li><strong>Kilo will never ask for your password</strong>, your full card number, your CVV, or your Social Security / national ID number. Not by email. Not by text. Not by DM.</li>
+            <li><strong>Kilo will never ask you to send money outside the app to "verify" your account,</strong> "unlock" a transfer, or "protect" your funds.</li>
+            <li><strong>Kilo will never ask for your 2FA or verification code.</strong> Codes we send you are for you only — anyone asking you to share one is trying to steal your account.</li>
+            <li><strong>Check the sender.</strong> Legitimate Kilo email comes from an <code>@getkilo.app</code> address. Lookalike domains (e.g., <code>getkil0.app</code>, <code>kilo-app.co</code>) are not us.</li>
+            <li><strong>Hover before you click.</strong> Kilo links in email point to <code>kilo.app</code>, <code>getkilo.app</code>, or <code>help.getkilo.app</code>. Other domains are not ours.</li>
+          </ul>
+          <p>
+            <strong>Got something suspicious?</strong> Forward it to
+            <a href="mailto:security@getkilo.app">security@getkilo.app</a>.
+            Don't click, don't reply, don't share codes.
+          </p>
+        </section>
+
+        <!-- 13. SUBPROCESSORS -->
+        <section id="subprocessors" class="legal-section">
+          <div class="section-label">Section 13</div>
+          <h2>Subprocessors.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> A live list of every vendor that processes user data — role, location, and data types. Updated when we add or change one.
+          </div>
+          <p>
+            The full subprocessors list is maintained at
+            [<a href="./privacy.html#subprocessors"><code>privacy.html#subprocessors</code></a>].
+            Under our Data Processing Addenda with business customers, we
+            commit to notifying you of changes to this list before new
+            subprocessors go live.
+          </p>
+          <p class="legal-muted">
+            If you need this page broken out to its own URL (e.g.,
+            <code>kilo.app/subprocessors</code>) for a vendor-review
+            checklist, contact <a href="mailto:privacy@getkilo.app">privacy@getkilo.app</a>.
+          </p>
+        </section>
+
+        <!-- 14. CONTACT -->
+        <section id="contact" class="legal-section">
+          <div class="section-label">Section 14</div>
+          <h2>Contact.</h2>
+          <div class="legal-short">
+            <strong>In short:</strong> Security issues → <a href="mailto:security@getkilo.app">security@getkilo.app</a>. Privacy → <a href="mailto:privacy@getkilo.app">privacy@getkilo.app</a>. Everything else → <a href="mailto:support@getkilo.app">support@getkilo.app</a>.
+          </div>
+          <div class="legal-callout">
+            <strong>Security team</strong><br />
+            Email: <a href="mailto:security@getkilo.app">security@getkilo.app</a> · Response within <strong>3 business days</strong><br />
+            PGP key: <a href="/.well-known/kilo-security.asc"><code>kilo-security.asc</code></a><br />
+            <br />
+            <strong>Privacy rights</strong><br />
+            Email: <a href="mailto:privacy@getkilo.app">privacy@getkilo.app</a> · Response within <strong>30 days</strong> (GDPR / CCPA)<br />
+            <br />
+            <strong>General support</strong><br />
+            Email: <a href="mailto:support@getkilo.app">support@getkilo.app</a> · Response within <strong>1 business day</strong><br />
+            <br />
+            <strong>Postal address (for legal notices)</strong><br />
+            Kilo, Inc.<br />
+            [PLACEHOLDER: street address]<br />
+            [PLACEHOLDER: city, state, postal code, country]
+          </div>
+          <p class="legal-muted">
+            We read every email to <code>security@getkilo.app</code>, even
+            if you're not sure what you found is a real issue. If you need
+            an acknowledgment for disclosure coordination, please say so in
+            your email.
+          </p>
+        </section>
+
+        <p class="legal-muted legal-end">
+          <strong>Last reviewed April 22, 2026.</strong> We review this
+          page at least twice a year and whenever our security posture
+          changes materially. Missing something? Tell us —
+          <a href="mailto:security@getkilo.app">security@getkilo.app</a>.
+        </p>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="logo" href="./index.html" style="color: white;">Kilo</a>
+          <div class="footer-tagline">Splits, simplified.<br />For the way you live now.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="./index.html#how">How it works</a>
+          <a href="./index.html#features">Features</a>
+          <a href="./index.html#pricing">Pricing</a>
+          <a href="./index.html#download">Download</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="./index.html#faq">FAQ</a>
+          <a href="./help.html">Help center</a>
+          <a href="mailto:hello@kilo.app">hello@kilo.app</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./security.html" aria-current="page">Security</a>
+          <a href="./cookies.html">Cookies</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Kilo, Inc. All rights reserved.</div>
+        <div>Payments powered by Stripe</div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
