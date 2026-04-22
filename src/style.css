@@ -1388,6 +1388,30 @@ footer { background: var(--black); padding: 60px 40px 40px; color: var(--purple-
   background: #fff4e6;
   border-color: #f5c77e;
 }
+.legal-callout-warning {
+  background: #fdecec;
+  border-color: #e8a5a5;
+  color: #5b1414;
+}
+.legal-callout-warning strong { color: #7a1414; }
+.legal-callout-warning a { color: #7a1414; text-decoration-color: rgba(122, 20, 20, 0.4); }
+
+/* Conspicuous / required-uppercase clauses (AS IS, class waivers, etc.).
+   Following UCC §2-316, courts look for text that is visually distinct
+   from surrounding copy. Uppercase + bold + slight tracking is the
+   conventional treatment and is widely used by Apple, Stripe, Netflix. */
+.legal-conspicuous {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 13.5px;
+  line-height: 1.65;
+  background: rgba(26, 11, 46, 0.03);
+  border: 1px solid rgba(26, 11, 46, 0.1);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 0 0 16px;
+}
 
 /* Definitions list */
 .legal-defs {
