@@ -59,8 +59,8 @@ if (qr) {
 // Nav color detection
 const nav = document.getElementById("mainNav");
 if (nav) {
-  const darkSections = [".hero", ".trust-section", ".final-cta"];
-  const lightSections = [".social-proof", ".problem", ".how", ".feature-deep", ".pricing", ".creators", ".faq"];
+  const darkSections = [".hero", ".trust-section", ".final-cta", ".legal-hero"];
+  const lightSections = [".social-proof", ".problem", ".how", ".feature-deep", ".pricing", ".creators", ".faq", ".legal-shell"];
 
   function updateNavColor() {
     const checkY = 60;
@@ -163,5 +163,59 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
       },
       { passive: true }
     );
+  }
+}
+
+// Legal / privacy page: active-section highlighting in the sticky TOC,
+// plus a mobile toggle to collapse the contents list.
+// Runs regardless of motion preferences; null-guarded so it's a no-op
+// on pages without a .legal-toc element (like the marketing homepage).
+const toc = document.querySelector(".legal-toc");
+if (toc) {
+  const tocLinks = Array.from(toc.querySelectorAll(".legal-toc-list a"));
+  const sectionsById = new Map();
+  tocLinks.forEach((link) => {
+    const id = link.getAttribute("href")?.slice(1);
+    if (!id) return;
+    const section = document.getElementById(id);
+    if (section) sectionsById.set(section, link);
+  });
+
+  if (sectionsById.size > 0 && "IntersectionObserver" in window) {
+    const tocIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const link = sectionsById.get(entry.target);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            tocLinks.forEach((l) => l.classList.remove("is-active"));
+            link.classList.add("is-active");
+          }
+        });
+      },
+      {
+        // Trigger when a section crosses into the upper portion of the
+        // viewport — matches the reader's attention better than center.
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      }
+    );
+    sectionsById.forEach((_link, section) => tocIO.observe(section));
+  }
+
+  const tocToggle = toc.querySelector(".legal-toc-toggle");
+  if (tocToggle) {
+    tocToggle.addEventListener("click", () => {
+      const isOpen = toc.classList.toggle("is-open");
+      tocToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    tocLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 960px)").matches) {
+          toc.classList.remove("is-open");
+          tocToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
   }
 }

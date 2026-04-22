@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { resolve } from "node:path";
 
 /**
  * GitHub project pages need a subpath, e.g. /SplitWeb/
@@ -19,4 +20,12 @@ export default defineConfig({
   base,
   root: ".",
   publicDir: "public",
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        privacy: resolve(__dirname, "privacy.html"),
+      },
+    },
+  },
 });
