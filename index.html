@@ -8,392 +8,531 @@
       content="Kilo splits your subscriptions automatically. Set it once, get paid every month — no Venmo requests, no awkward texts."
     />
     <meta name="theme-color" content="#1a0b2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kilo — Split subscriptions with your squad" />
+    <meta property="og:description" content="Stop chasing friends for Netflix money. Kilo auto-splits and auto-collects, every month." />
+    <meta property="og:type" content="website" />
+
+    <!-- Smart App Banner (iOS) -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID" />
+
     <title>Kilo. — Split subscriptions with your squad</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>  
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <nav aria-label="Primary">
+    <nav id="mainNav" class="on-dark" aria-label="Primary">
       <a class="logo" href="#top">Kilo</a>
-      <button
-        type="button"
-        class="nav-toggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-      >
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-      </button>
-      <div class="nav-links" id="primary-nav">
+      <div class="nav-links">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
-        <a href="#download" class="nav-cta">Get the app</a>
+        <a href="#download" class="nav-cta">Get the App</a>
       </div>
     </nav>
 
-    <div class="hero-outer scroll-hero" id="top">
-      <section class="hero" id="main">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="dot" aria-hidden="true"></span>
-            <span>Now live on iOS &amp; Android</span>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-content" id="main">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>Now live on iOS &amp; Android</span>
+        </div>
+        <h1>
+          Stop chasing<br />
+          your friends<br />
+          for <span class="italic">Subscription</span> money.
+        </h1>
+        <p class="hero-sub">
+          Kilo splits your subscriptions automatically. Set it once — get paid every month. No Venmo requests. No awkward texts.
+        </p>
+        <div class="hero-cta">
+          <a href="#download" class="store-btn">
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12.5c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3.9-4.1.9-.9 0-2.2-.9-3.6-.9-1.8 0-3.5 1.1-4.5 2.7C.8 12.3 2.2 17.3 4 20.1c.9 1.3 2 2.9 3.4 2.8 1.4-.1 1.9-.9 3.5-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.4 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.1 0-2.8-1.1-2.8-4.2m-2.8-7.7c.8-.9 1.3-2.2 1.1-3.5C13.7.4 12.3 1 11.5 2c-.7.8-1.3 2.1-1.2 3.3 1.2.1 2.5-.6 3.3-1.5"/></svg>
+            Download on iPhone
+          </a>
+          <a href="#download" class="store-btn secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.202 12l2.496-2.491zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
+            Get on Android
+          </a>
+        </div>
+        <div class="micro-trust">
+          <span>✓ Free to start</span>
+          <span>✓ No credit card</span>
+          <span>✓ iOS &amp; Android</span>
+        </div>
+        <div class="trust-row">
+          <div class="trust-stat">
+            <span class="num">4.9★</span>
+            <span class="label">App Store</span>
           </div>
-          <h1>
-            Stop chasing<br />
-            your friends<br />
-            for <span class="italic">Subscription</span> money.
-          </h1>
-          <p class="hero-sub">
-            Kilo splits your subscriptions automatically. Set it once — get paid
-            every month. No Venmo requests. No awkward texts.
-          </p>
-          <div class="hero-cta">
-            <a href="#download" class="store-btn">
-              <svg
-                width="20"
-                height="24"
-                viewBox="0 0 20 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M16.5 12.5c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3.9-4.1.9-.9 0-2.2-.9-3.6-.9-1.8 0-3.5 1.1-4.5 2.7C.8 12.3 2.2 17.3 4 20.1c.9 1.3 2 2.9 3.4 2.8 1.4-.1 1.9-.9 3.5-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.4 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.1 0-2.8-1.1-2.8-4.2m-2.8-7.7c.8-.9 1.3-2.2 1.1-3.5C13.7.4 12.3 1 11.5 2c-.7.8-1.3 2.1-1.2 3.3 1.2.1 2.5-.6 3.3-1.5"
-                />
-              </svg>
-              Download on iPhone
-            </a>
-            <a href="#download" class="store-btn secondary">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.202 12l2.496-2.491zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"
-                />
-              </svg>
-              Get on Android
-            </a>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="num">$12M+</span>
+            <span class="label">Split monthly</span>
           </div>
-          <div class="trust-row" aria-label="App highlights">
-            <div class="trust-stat">
-              <span class="num">4.9★</span>
-              <span class="label">App Store</span>
-            </div>
-            <div class="trust-divider" aria-hidden="true"></div>
-            <div class="trust-stat">
-              <span class="num">$12M+</span>
-              <span class="label">Split monthly</span>
-            </div>
-            <div class="trust-divider" aria-hidden="true"></div>
-            <div class="trust-stat">
-              <span class="num">50k+</span>
-              <span class="label">Squads</span>
-            </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="num">50k+</span>
+            <span class="label">Squads</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-stage">
+        <div class="float-badge one">
+          <div class="float-icon" style="background: #10b981;">✓</div>
+          <div>
+            <div style="color: #6b7280; font-size: 10px; font-weight: 500;">PAID</div>
+            <div>+$13.50 from Titus</div>
+          </div>
+        </div>
+        <div class="float-badge two">
+          <div class="float-icon" style="background: #e50914;">N</div>
+          <div>
+            <div style="color: #6b7280; font-size: 10px; font-weight: 500;">NETFLIX · 4 WAY SPLIT</div>
+            <div>Saves you $14/mo</div>
           </div>
         </div>
 
-        <div class="phone-stage">
-          <div class="float-badge one">
-            <div class="float-icon" style="background: #10b981">✓</div>
-            <div>
-              <div
-                style="
-                  color: #6b7280;
-                  font-size: 10px;
-                  font-weight: 500;
-                "
-              >
-                PAID
-              </div>
-              <div>+$13.50 from Titus</div>
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-avatar"></div>
+              <div class="phone-greeting">Good evening, Demetrik</div>
+              <div class="phone-bell">🔔</div>
             </div>
-          </div>
-          <div class="float-badge two">
-            <div class="float-icon" style="background: #e50914">N</div>
-            <div>
-              <div
-                style="
-                  color: #6b7280;
-                  font-size: 10px;
-                  font-weight: 500;
-                "
-              >
-                NETFLIX · 4 WAY SPLIT
-              </div>
-              <div>Saves you $14/mo</div>
-            </div>
-          </div>
-
-          <div class="phone" role="img" aria-label="Kilo app preview on a phone">
-            <div class="notch" aria-hidden="true"></div>
-            <div class="phone-screen">
-              <div class="phone-header">
-                <div class="phone-avatar" aria-hidden="true"></div>
-                <div class="phone-greeting">Good evening, Demetrik</div>
-                <div class="phone-bell" aria-hidden="true">🔔</div>
-              </div>
-              <div class="savings-ring">
-                <div class="ring">
+            <div class="savings-ring">
+              <div class="ring">
+                <div class="ring-inner">
                   <div class="ring-label-top">saved this month</div>
-                  <div class="ring-amount">+$17.99</div>
+                  <div class="ring-amount">+$59.30</div>
                   <div class="ring-label-bot">by splitting</div>
                 </div>
-                <div class="stats-col">
-                  <div>
-                    <div class="stat-line">
-                      <span
-                        class="dot-s"
-                        style="background: var(--green-light)"
-                        aria-hidden="true"
-                      ></span
-                      >Saved
-                    </div>
-                    <span class="stat-amount stat-green">$17.99</span>
-                  </div>
-                  <div>
-                    <div class="stat-line">
-                      <span
-                        class="dot-s"
-                        style="background: #60a5fa"
-                        aria-hidden="true"
-                      ></span
-                      >Pending
-                    </div>
-                    <span class="stat-amount stat-blue">$0.00</span>
-                  </div>
-                  <div>
-                    <div class="stat-line">
-                      <span
-                        class="dot-s"
-                        style="background: #fb923c"
-                        aria-hidden="true"
-                      ></span
-                      >Owed to you
-                    </div>
-                    <span class="stat-amount stat-orange">$0.00</span>
-                  </div>
+              </div>
+              <div class="stats-col">
+                <div>
+                  <div class="stat-line"><span class="dot-s" style="background: var(--green-light);"></span>Saved</div>
+                  <span class="stat-amount stat-green">$59.30</span>
+                </div>
+                <div>
+                  <div class="stat-line"><span class="dot-s" style="background: #60a5fa;"></span>Pending</div>
+                  <span class="stat-amount stat-blue">$0.00</span>
+                </div>
+                <div>
+                  <div class="stat-line"><span class="dot-s" style="background: #fb923c;"></span>Owed to you</div>
+                  <span class="stat-amount stat-orange">$23.50</span>
                 </div>
               </div>
-              <div class="sub-card">
-                <div class="sub-icon" aria-hidden="true">N</div>
-                <div class="sub-info">
-                  <div class="sub-title">Netflix Premium</div>
-                  <div class="sub-meta">bills May 1 · 2 members</div>
+            </div>
+
+            <div class="pending-card">
+              <div class="pending-row">
+                <div class="pending-dot" style="background: #fb923c;"></div>
+                <div class="pending-info">
+                  <div class="pending-title">Pending from 2 people</div>
+                  <div class="pending-sub">Collect on your subscriptions</div>
                 </div>
-                <div class="sub-amount">$26.99</div>
+                <div class="pending-amount" style="color: #0a0610;">$23.50</div>
+              </div>
+              <div class="pending-row">
+                <div class="pending-dot" style="background: #ef4444;"></div>
+                <div class="pending-info">
+                  <div class="pending-title">Overdue · Xbox</div>
+                  <div class="pending-sub">Member payment overdue</div>
+                </div>
+                <div class="pending-amount" style="color: #ef4444;">$15.00</div>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <div class="quick-action">
+                <div class="qa-icon" style="background: #d1fae5; color: #047857;">⏱</div>
+                <div class="qa-label">Add sub</div>
+              </div>
+              <div class="quick-action">
+                <div class="qa-icon" style="background: #d1fae5; color: #047857;">💵</div>
+                <div class="qa-label">Pay now</div>
+              </div>
+              <div class="quick-action">
+                <div class="qa-icon" style="background: #dbeafe; color: #1d4ed8;">👥</div>
+                <div class="qa-label">Find</div>
+              </div>
+              <div class="quick-action">
+                <div class="qa-icon" style="background: #fed7aa; color: #c2410c;">👥</div>
+                <div class="qa-label">Invite</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <section class="how section-reveal" id="how">
+    <!-- SOCIAL PROOF STRIP -->
+    <section class="social-proof" style="max-width: none;">
+      <div class="sp-label">Trusted by 50,000+ squads</div>
+      <div class="sp-logos">
+        <div class="sp-logo">TechCrunch</div>
+        <div class="sp-logo">The Verge</div>
+        <div class="sp-logo">Product Hunt</div>
+        <div class="sp-logo">Fast Company</div>
+        <div class="sp-logo">Morning Brew</div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="problem" style="max-width: none;">
+      <div class="section-label" style="justify-content: center;">The problem</div>
+      <h2>Someone's always <span class="italic">paying for everyone.</span></h2>
+      <p class="problem-sub">
+        Netflix. Spotify. Hulu. The gym. Disney+. ChatGPT. You front the bill, then spend the rest of the month reminding your friends to hit you back. Sound familiar?
+      </p>
+
+      <div class="problem-viz">
+        <div class="chat-header">
+          <div class="chat-avatar-group">
+            <div class="a" style="background: #fb923c;">J</div>
+            <div class="a" style="background: #10b981;">T</div>
+            <div class="a" style="background: #7c5ce8;">S</div>
+          </div>
+          <div>
+            <div class="chat-title">The Roommates 🏠</div>
+            <div class="chat-sub">3 members</div>
+          </div>
+        </div>
+
+        <div class="chat-msg you">
+          <div class="sender">You · 3 weeks ago</div>
+          Hey can yall Venmo me for Netflix 🙏
+        </div>
+        <div class="chat-msg them">
+          <div class="sender">Jordan</div>
+          omg yes my bad, gotcha tonight
+        </div>
+        <div class="chat-msg you">
+          <div class="sender">You · 2 weeks ago</div>
+          Still waiting on Netflix $$ btw 😅
+        </div>
+        <div class="chat-msg them">
+          <div class="sender">Sam</div>
+          how much was it again
+        </div>
+        <div class="chat-msg you">
+          <div class="sender">You · yesterday</div>
+          Yo Spotify also billed today, it's $4 each
+        </div>
+        <div class="chat-indicator">... and on, and on, and on.</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
       <div class="section-label">How it works</div>
-      <h2>
-        Three steps.<br />
-        Then you <span class="italic">never</span> think about it again.
-      </h2>
+      <h2>Three steps.<br />Then you <span class="italic">never</span> think about it again.</h2>
 
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
           <h3>Add the subscription</h3>
-          <p>
-            Netflix, Spotify, Disney+, YouTube Premium — pick from the catalog
-            or add your own service.
-          </p>
+          <p>Netflix, Spotify, Disney+, YouTube Premium — pick from the catalog or add your own service.</p>
           <div class="step-visual">
-            <div
-              class="step-visual-icon"
-              style="background: #e50914; color: white"
-            >
-              N
-            </div>
-            <div
-              style="font-size: 13px; color: var(--purple-900); font-weight: 500"
-            >
-              Netflix Premium · $26.99
-            </div>
+            <div class="step-visual-icon" style="background: #e50914; color: white;">N</div>
+            <div style="font-size: 13px; color: var(--purple-900); font-weight: 500;">Netflix Premium · $26.99</div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <h3>Invite your squad</h3>
-          <p>
-            Send an invite link. They join, add a card, and the split is locked
-            in. Everybody sees who paid what.
-          </p>
+          <p>Send an invite link. They join, add a card, and the split is locked in. Everybody sees who paid what.</p>
           <div class="step-visual">
-            <div style="display: flex; margin-right: 8px">
-              <div
-                class="step-visual-icon"
-                style="
-                  background: #7c5ce8;
-                  color: white;
-                  margin-right: -12px;
-                  border: 2px solid white;
-                "
-              >
-                D
-              </div>
-              <div
-                class="step-visual-icon"
-                style="
-                  background: #10b981;
-                  color: white;
-                  margin-right: -12px;
-                  border: 2px solid white;
-                "
-              >
-                T
-              </div>
-              <div
-                class="step-visual-icon"
-                style="background: #fb923c; color: white; border: 2px solid white"
-              >
-                J
-              </div>
+            <div style="display: flex; margin-right: 8px;">
+              <div class="step-visual-icon" style="background: #7c5ce8; color: white; margin-right: -12px; border: 2px solid white;">D</div>
+              <div class="step-visual-icon" style="background: #10b981; color: white; margin-right: -12px; border: 2px solid white;">T</div>
+              <div class="step-visual-icon" style="background: #fb923c; color: white; border: 2px solid white;">J</div>
             </div>
-            <div
-              style="font-size: 13px; color: var(--purple-900); font-weight: 500"
-            >
-              3 members · equal split
-            </div>
+            <div style="font-size: 13px; color: var(--purple-900); font-weight: 500;">3 members · equal split</div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <h3>Get paid, on autopilot</h3>
-          <p>
-            Every billing cycle, everyone's card is charged automatically. The
-            money hits your account. Done.
-          </p>
+          <p>Every billing cycle, everyone's card is charged automatically. The money hits your account. Done.</p>
           <div class="step-visual">
-            <div
-              class="step-visual-icon"
-              style="background: var(--green); color: white"
-            >
-              ✓
+            <div class="step-visual-icon" style="background: var(--green); color: white;">✓</div>
+            <div style="font-size: 13px; color: var(--purple-900); font-weight: 500;">Auto-charge · every 1st</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE DEEP DIVE (alternating L/R) -->
+    <section class="feature-deep" id="features">
+      <div class="feature-deep-label">
+        <div class="section-label">What's inside</div>
+        <h2>Built for the way you<br/><span class="italic">actually</span> share.</h2>
+      </div>
+
+      <div class="fd-row">
+        <div class="fd-text">
+          <h3>Every subscription,<br/>in one place.</h3>
+          <p>
+            Netflix, Spotify, Game Pass, iCloud, Discord Nitro — your whole recurring life, organized. See exactly who pays for what, when it bills, and what your actual share is.
+          </p>
+          <ul>
+            <li>Pre-loaded catalog of 200+ services</li>
+            <li>Custom subscriptions for anything else</li>
+            <li>Tier-aware pricing (Standard, Premium, Family)</li>
+          </ul>
+        </div>
+        <div class="fd-visual purple">
+          <div class="fd-card">
+            <div class="fd-card-title">Your subscriptions</div>
+            <div class="fd-card-sub-row">
+              <div class="fd-sub-icon" style="background: #e50914;">N</div>
+              <div style="flex: 1;">
+                <div class="fd-sub-name">Netflix Premium</div>
+                <div class="fd-sub-meta">4 members · bills May 1</div>
+              </div>
+              <div class="fd-sub-amount">$6.74</div>
             </div>
-            <div
-              style="font-size: 13px; color: var(--purple-900); font-weight: 500"
-            >
-              Auto-charge · every 1st
+            <div class="fd-card-sub-row">
+              <div class="fd-sub-icon" style="background: #1db954;">S</div>
+              <div style="flex: 1;">
+                <div class="fd-sub-name">Spotify Family</div>
+                <div class="fd-sub-meta">5 members · bills May 12</div>
+              </div>
+              <div class="fd-sub-amount">$3.40</div>
+            </div>
+            <div class="fd-card-sub-row">
+              <div class="fd-sub-icon" style="background: #107c10;">X</div>
+              <div style="flex: 1;">
+                <div class="fd-sub-name">Xbox Game Pass</div>
+                <div class="fd-sub-meta">2 members · bills May 14</div>
+              </div>
+              <div class="fd-sub-amount">$9.50</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-row reverse">
+        <div class="fd-text">
+          <h3>Auto-charge.<br/>Set it, forget it.</h3>
+          <p>
+            On billing day, everyone's card gets charged automatically — Kilo collects the cash and deposits it into your account before you even remember the bill is due.
+          </p>
+          <ul>
+            <li>Secure payments powered by Stripe</li>
+            <li>Automatic retry on failed charges</li>
+            <li>Instant notifications when money arrives</li>
+          </ul>
+        </div>
+        <div class="fd-visual green">
+          <div class="fd-card">
+            <div class="fd-card-title">Today's collection</div>
+            <div style="text-align: center; padding: 20px 0;">
+              <div style="font-size: 12px; color: #6b7280; margin-bottom: 6px;">⚡ AUTO-CHARGED</div>
+              <div style="font-size: 36px; font-weight: 700; color: var(--green); letter-spacing: -0.02em;">+$47.50</div>
+              <div style="font-size: 13px; color: #9ca3af; margin-top: 4px;">from 3 members</div>
+            </div>
+            <div style="border-top: 1px solid #f0f0f0; padding-top: 14px; display: flex; gap: 8px; align-items: center;">
+              <div style="display: flex;">
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #7c5ce8; border: 2px solid white; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; margin-right: -6px;">D</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #10b981; border: 2px solid white; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; margin-right: -6px;">T</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #fb923c; border: 2px solid white; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700;">J</div>
+              </div>
+              <div style="font-size: 11px; color: #6b7280;">All paid up · no action needed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-row">
+        <div class="fd-text">
+          <h3>Your savings,<br/>visualized.</h3>
+          <p>
+            See how much you're saving every month — and every year — just by splitting. Those dollars add up fast when you're the only one on a family plan.
+          </p>
+          <ul>
+            <li>Real-time savings tracker</li>
+            <li>Year-over-year comparison</li>
+            <li>Shareable savings snapshots</li>
+          </ul>
+        </div>
+        <div class="fd-visual amber">
+          <div class="fd-card">
+            <div class="fd-card-title">Saved this year</div>
+            <div style="text-align: center; padding: 12px 0;">
+              <div style="font-size: 36px; font-weight: 700; color: var(--green); letter-spacing: -0.02em;">+$247</div>
+              <div style="font-size: 12px; color: #9ca3af;">vs. paying alone</div>
+            </div>
+            <div class="fd-chart-bars">
+              <div class="fd-bar" style="height: 30%;"></div>
+              <div class="fd-bar" style="height: 45%;"></div>
+              <div class="fd-bar" style="height: 55%;"></div>
+              <div class="fd-bar" style="height: 50%;"></div>
+              <div class="fd-bar" style="height: 70%;"></div>
+              <div class="fd-bar" style="height: 85%;"></div>
+              <div class="fd-bar" style="height: 100%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: #9ca3af; margin-top: 8px;">
+              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-row reverse">
+        <div class="fd-text">
+          <h3>Billing calendar<br/>at a glance.</h3>
+          <p>
+            Every subscription, every billing date, mapped out. No more getting blindsided by a $26 charge you forgot about.
+          </p>
+          <ul>
+            <li>See what's coming this week</li>
+            <li>Full-month view with service icons</li>
+            <li>Push notifications before bill day</li>
+          </ul>
+        </div>
+        <div class="fd-visual pink">
+          <div class="fd-card">
+            <div class="fd-card-title">May 2026</div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px; font-size: 10px; color: #9ca3af; text-align: center; font-weight: 600; text-transform: uppercase;">
+              <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+            </div>
+            <div class="fd-calendar">
+              <div class="fd-cal-day bill">1</div>
+              <div class="fd-cal-day">2</div>
+              <div class="fd-cal-day">3</div>
+              <div class="fd-cal-day">4</div>
+              <div class="fd-cal-day">5</div>
+              <div class="fd-cal-day">6</div>
+              <div class="fd-cal-day">7</div>
+              <div class="fd-cal-day">8</div>
+              <div class="fd-cal-day">9</div>
+              <div class="fd-cal-day">10</div>
+              <div class="fd-cal-day">11</div>
+              <div class="fd-cal-day bill">12</div>
+              <div class="fd-cal-day">13</div>
+              <div class="fd-cal-day bill">14</div>
+              <div class="fd-cal-day">15</div>
+              <div class="fd-cal-day today">16</div>
+              <div class="fd-cal-day">17</div>
+              <div class="fd-cal-day">18</div>
+              <div class="fd-cal-day">19</div>
+              <div class="fd-cal-day">20</div>
+              <div class="fd-cal-day">21</div>
+            </div>
+            <div style="margin-top: 12px; font-size: 11px; color: #6b7280; display: flex; align-items: center; gap: 8px;">
+              <div style="width: 10px; height: 10px; background: var(--green); border-radius: 3px;"></div>
+              <span>3 bills this month</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="features section-reveal"
-      id="features"
-      aria-labelledby="features-heading"
-    >
-      <div class="features-inner">
-        <div class="section-label" style="color: var(--purple-300)">What's inside</div>
-        <h2 id="features-heading">
-          Built for the way you <span class="italic">actually</span> share.
-        </h2>
+    <!-- PRICING -->
+    <section class="pricing" id="pricing" style="max-width: none;">
+      <div class="section-label" style="justify-content: center;">Pricing</div>
+      <h2>Free to start.<br/>Worth it to <span class="italic">upgrade</span>.</h2>
+      <p class="pricing-sub">
+        Start free with up to 2 splits. Get Kilo Plus for unlimited everything — less than one coffee a month.
+      </p>
 
-        <div class="features-grid">
-          <div class="feature-card large">
-            <div>
-              <h3>Split any way<br />that makes sense.</h3>
-              <p>
-                Equal splits when everyone pays the same. Custom percentages
-                when someone uses more. Owner-less when you're treating the
-                group.
-              </p>
-            </div>
-            <div class="feature-visual">
-              <div class="split-viz" aria-hidden="true">
-                <div class="avatar-bubble">D</div>
-                <div class="avatar-bubble">T</div>
-                <div class="avatar-bubble">J</div>
-                <div class="avatar-bubble">K</div>
-                <div class="amount-tag">$6.74 each</div>
-              </div>
-            </div>
-          </div>
+      <div class="billing-toggle">
+        <div class="bt-option active" data-period="monthly">Monthly</div>
+        <div class="bt-option" data-period="annual">Annual<span class="save">Save 20%</span></div>
+      </div>
 
-          <div class="feature-card">
-            <h3>Auto-charge</h3>
-            <p>Cards get charged automatically on billing day. No reminders, no chasing.</p>
-            <div class="feature-visual" style="height: 160px">
-              <div class="auto-charge-viz">
-                <div class="charge-bolt" aria-hidden="true">⚡</div>
-                <div class="charge-text">Charges in 11 days</div>
-              </div>
-            </div>
-          </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Free</div>
+          <div class="price-desc">Everything you need to get started.</div>
+          <div class="price-amount">$0</div>
+          <div class="price-period">forever, no card required</div>
+          <a href="#download" class="price-cta primary">Get Kilo free</a>
+          <ul class="price-features">
+            <li>Up to 2 active splits</li>
+            <li>Auto-charge on billing day</li>
+            <li>Billing calendar</li>
+            <li>Friend balances</li>
+            <li>Push notifications</li>
+          </ul>
+        </div>
 
-          <div class="feature-card">
-            <h3>Billing calendar</h3>
-            <p>Every subscription mapped to a day. See what's coming at a glance.</p>
-            <div class="feature-visual" style="height: 160px">
-              <div class="mini-calendar" aria-label="Sample billing calendar">
-                <div class="cal-day">20</div>
-                <div class="cal-day">21</div>
-                <div class="cal-day">22</div>
-                <div class="cal-day">23</div>
-                <div class="cal-day bill">24</div>
-                <div class="cal-day">25</div>
-                <div class="cal-day">26</div>
-                <div class="cal-day">27</div>
-                <div class="cal-day">28</div>
-                <div class="cal-day bill">1</div>
-                <div class="cal-day">2</div>
-                <div class="cal-day">3</div>
-                <div class="cal-day bill">4</div>
-                <div class="cal-day">5</div>
-              </div>
-            </div>
-          </div>
+        <div class="price-card featured">
+          <div class="price-tag">Most popular</div>
+          <div class="price-name">Plus</div>
+          <div class="price-desc">Unlimited splits and deeper insights.</div>
+          <div class="price-amount" data-monthly="$3.99" data-annual="$2.99">$3.99</div>
+          <div class="price-period" data-monthly-label="per month" data-annual-label="per month, billed annually">per month</div>
+          <a href="#download" class="price-cta primary">Get Kilo Plus</a>
+          <ul class="price-features">
+            <li>Everything in Free</li>
+            <li>Unlimited active splits</li>
+            <li>Advanced savings analytics</li>
+            <li>Custom split percentages</li>
+            <li>Priority customer support</li>
+            <li>Early access to new features</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="creators section-reveal" aria-labelledby="creators-heading">
+    <!-- TRUST -->
+    <section class="trust-section" style="max-width: none; margin: 0;">
+      <div class="section-label" style="justify-content: center; color: var(--purple-300);">Safety &amp; security</div>
+      <h2>Your money &amp; data,<br/>locked down tight.</h2>
+      <p class="trust-sub">
+        We take security seriously so you don't have to think about it.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <h3>Bank-level encryption</h3>
+          <p>End-to-end encrypted payments. We never see or store your card details.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💳</div>
+          <h3>Powered by Stripe</h3>
+          <p>The same payment infrastructure that powers Amazon, Shopify, and Lyft.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <h3>Your data is yours</h3>
+          <p>We never sell your data. Ever. Delete your account anytime and it's gone for good.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATORS / SQUADS -->
+    <section class="creators">
       <div>
         <div class="section-label">For streamers &amp; squads</div>
-        <h2 id="creators-heading">
-          Split with<br />
-          your <span class="italic">squad</span>.
-        </h2>
-        <p
-          style="
-            font-size: 18px;
-            color: #4a3968;
-            line-height: 1.6;
-            max-width: 480px;
-            margin-bottom: 32px;
-          "
-        >
-          Game Pass. Discord Nitro. Spotify Family. YouTube Premium. The stuff
-          you and your people use every day — now fairly split, automatically
-          collected.
+        <h2>Split with<br />your <span class="italic">squad</span>.</h2>
+        <p style="font-size: 18px; color: #4a3968; line-height: 1.6; max-width: 480px; margin-bottom: 32px;">
+          Game Pass. Discord Nitro. Spotify Family. YouTube Premium. The stuff you and your people use every day — now fairly split, automatically collected.
         </p>
-        <a
-          href="#download"
-          class="store-btn"
-          style="background: var(--purple-900); color: var(--cream); display: inline-flex"
-        >
+        <a href="#download" class="store-btn" style="background: var(--purple-900); color: var(--cream); display: inline-flex;">
           Start your first split
-          <span style="margin-left: 4px" aria-hidden="true">→</span>
+          <span style="margin-left: 4px;">→</span>
         </a>
       </div>
-      <div class="creators-visual" aria-hidden="true">
+      <div class="creators-visual">
         <div class="squad-label">YOUR SQUAD · 4 MEMBERS</div>
         <div class="squad-title">The<br />Gamer House</div>
         <div class="squad-list">
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #52b043; color: white">G</div>
+            <div class="squad-avatar" style="background: #52b043; color: white;">G</div>
             <div class="squad-info">
               <div class="squad-name">Xbox Game Pass</div>
               <div class="squad-service">Bills May 14 · 4 way</div>
@@ -401,7 +540,7 @@
             <div class="squad-price">$4.25</div>
           </div>
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #5865f2; color: white">D</div>
+            <div class="squad-avatar" style="background: #5865f2; color: white;">D</div>
             <div class="squad-info">
               <div class="squad-name">Discord Nitro</div>
               <div class="squad-service">Bills May 20 · 4 way</div>
@@ -409,7 +548,7 @@
             <div class="squad-price">$2.50</div>
           </div>
           <div class="squad-item">
-            <div class="squad-avatar" style="background: #1db954; color: white">S</div>
+            <div class="squad-avatar" style="background: #1db954; color: white;">S</div>
             <div class="squad-info">
               <div class="squad-name">Spotify Family</div>
               <div class="squad-service">Bills May 28 · 4 way</div>
@@ -420,129 +559,123 @@
       </div>
     </section>
 
-    <section class="faq section-reveal" id="faq" aria-labelledby="faq-heading">
+    <!-- FAQ -->
+    <section class="faq" id="faq">
       <div class="section-label">Questions</div>
-      <h2 id="faq-heading">Everything you need<br />to know.</h2>
+      <h2>Everything you need<br />to know.</h2>
 
       <div class="faq-list">
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" id="faq-q-1" aria-controls="faq-a-1">
+          <button class="faq-q" aria-expanded="false">
+            <span>Is Kilo free?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">Yes — Kilo is free for up to 2 active splits, forever. No credit card required to get started. Kilo Plus unlocks unlimited splits and advanced features for less than a coffee a month.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
             <span>Is my money safe?</span>
-            <span class="plus" aria-hidden="true">+</span>
+            <span class="plus">+</span>
           </button>
-          <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
-            Kilo uses Stripe to process all payments. We never see or store your
-            card number — it's handled by the same infrastructure powering
-            millions of businesses worldwide.
-          </div>
+          <div class="faq-a">Kilo uses Stripe to process all payments — the same infrastructure powering Amazon, Shopify, and millions of businesses. We never see or store your card number.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" id="faq-q-2" aria-controls="faq-a-2">
+          <button class="faq-q" aria-expanded="false">
             <span>What if someone doesn't pay?</span>
-            <span class="plus" aria-hidden="true">+</span>
+            <span class="plus">+</span>
           </button>
-          <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
-            With auto-charge on, cards are charged automatically on billing day. If
-            a payment fails, you'll be notified immediately and we'll retry the
-            charge. You can also end a split with one tap.
-          </div>
+          <div class="faq-a">With auto-charge on, cards are charged automatically on billing day. If a payment fails, you'll be notified immediately and we'll retry the charge. You can also end a split with one tap.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" id="faq-q-3" aria-controls="faq-a-3">
-            <span>How much does Kilo cost?</span>
-            <span class="plus" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
-            Free to get started with up to 2 active splits. Kilo Plus unlocks
-            unlimited splits, priority support, and advanced analytics — less
-            than one coffee a month.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" id="faq-q-4" aria-controls="faq-a-4">
+          <button class="faq-q" aria-expanded="false">
             <span>Does Kilo actually pay the subscription for me?</span>
-            <span class="plus" aria-hidden="true">+</span>
+            <span class="plus">+</span>
           </button>
-          <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
-            No — you still pay Netflix (or whoever) directly. Kilo just collects
-            everyone's share and sends it to you, so you break even instead of
-            covering the full bill yourself.
-          </div>
+          <div class="faq-a">No — you still pay Netflix (or whoever) directly. Kilo just collects everyone's share and sends it to you, so you break even instead of covering the full bill yourself.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false" id="faq-q-5" aria-controls="faq-a-5">
+          <button class="faq-q" aria-expanded="false">
             <span>Can I split things other than streaming services?</span>
-            <span class="plus" aria-hidden="true">+</span>
+            <span class="plus">+</span>
           </button>
-          <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5">
-            Yes. Any recurring subscription — gym memberships, software, cloud
-            storage, gaming services. If it bills on a schedule, Kilo can split
-            it.
-          </div>
+          <div class="faq-a">Yes. Any recurring subscription — gym memberships, software, cloud storage, gaming services. If it bills on a schedule, Kilo can split it.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>iOS only or Android too?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">Both! Kilo works on iOS 15+ and Android 10+. Download on either platform and your splits sync automatically.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>How do I cancel Kilo Plus?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">Cancel anytime in settings — one tap. You'll keep Plus features until the end of your billing cycle, then automatically drop to the free plan. Your existing splits stay intact.</div>
         </div>
       </div>
     </section>
 
-    <section
-      class="final-cta section-reveal"
-      id="download"
-      aria-labelledby="download-heading"
-    >
+    <!-- FINAL CTA WITH QR + SMS -->
+    <section class="final-cta" id="download" style="max-width: none; margin: 0;">
       <div class="final-cta-inner">
-        <h2 id="download-heading">
-          Splits,<br />
-          made <span class="italic">simple</span>.
-        </h2>
-        <p>
-          Download Kilo. Add a subscription. Invite your people. That's it.
-        </p>
-        <div class="hero-cta" style="justify-content: center">
+        <h2>Splits,<br />made <span class="italic">simple</span>.</h2>
+        <p>Download Kilo. Add a subscription. Invite your people. That's it.</p>
+
+        <div class="hero-cta" style="justify-content: center;">
           <a href="#" class="store-btn">
-            <svg
-              width="20"
-              height="24"
-              viewBox="0 0 20 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                d="M16.5 12.5c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3.9-4.1.9-.9 0-2.2-.9-3.6-.9-1.8 0-3.5 1.1-4.5 2.7C.8 12.3 2.2 17.3 4 20.1c.9 1.3 2 2.9 3.4 2.8 1.4-.1 1.9-.9 3.5-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.4 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.1 0-2.8-1.1-2.8-4.2m-2.8-7.7c.8-.9 1.3-2.2 1.1-3.5C13.7.4 12.3 1 11.5 2c-.7.8-1.3 2.1-1.2 3.3 1.2.1 2.5-.6 3.3-1.5"
-              />
-            </svg>
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12.5c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3.9-4.1.9-.9 0-2.2-.9-3.6-.9-1.8 0-3.5 1.1-4.5 2.7C.8 12.3 2.2 17.3 4 20.1c.9 1.3 2 2.9 3.4 2.8 1.4-.1 1.9-.9 3.5-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.4 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.1 0-2.8-1.1-2.8-4.2m-2.8-7.7c.8-.9 1.3-2.2 1.1-3.5C13.7.4 12.3 1 11.5 2c-.7.8-1.3 2.1-1.2 3.3 1.2.1 2.5-.6 3.3-1.5"/></svg>
             Download on iPhone
           </a>
           <a href="#" class="store-btn secondary">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.202 12l2.496-2.491zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"
-              />
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.202 12l2.496-2.491zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
             Get on Android
           </a>
+        </div>
+
+        <div class="cta-grid">
+          <div class="sms-box">
+            <h4>Text me the link</h4>
+            <form class="sms-form" onsubmit="event.preventDefault(); alert('Link sent! (demo)');">
+              <input type="tel" placeholder="(555) 123-4567" aria-label="Phone number" />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <div class="cta-divider">or</div>
+
+          <div class="qr-box">
+            <h4>Scan to download</h4>
+            <div class="qr-code" id="qr"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="section-reveal">
+    <!-- FOOTER -->
+    <footer>
       <div class="footer-inner">
         <div class="footer-brand">
-          <a class="logo" href="#top" style="color: white">Kilo</a>
-          <div class="footer-tagline">
-            Splits, simplified.<br />
-            For the way you live now.
+          <a class="logo" href="#top" style="color: white;">Kilo</a>
+          <div class="footer-tagline">Splits, simplified.<br />For the way you live now.</div>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="#how">How it works</a>
           <a href="#features">Features</a>
-          <a href="#">Pricing</a>
+          <a href="#pricing">Pricing</a>
           <a href="#download">Download</a>
         </div>
         <div class="footer-col">
@@ -551,6 +684,13 @@
           <a href="#">Press</a>
           <a href="#">Careers</a>
           <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#">Help center</a>
+          <a href="#">Status</a>
+          <a href="mailto:hello@kilo.app">hello@kilo.app</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
