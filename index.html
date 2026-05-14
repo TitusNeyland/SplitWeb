@@ -10,14 +10,14 @@
     <meta name="theme-color" content="#1a0b2e" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Kilo — Split subscriptions with your squad" />
+    <meta property="og:title" content="Kilo — Split subscriptions with your friends" />
     <meta property="og:description" content="Stop chasing friends for Netflix money. Kilo auto-splits and auto-collects, every month." />
     <meta property="og:type" content="website" />
 
     <!-- Smart App Banner (iOS) -->
     <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID" />
 
-    <title>Kilo. — Split subscriptions with your squad</title>
+    <title>Kilo. — Split subscriptions with your friends</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,7 +80,7 @@
           <div class="trust-divider"></div>
           <div class="trust-stat">
             <span class="num">50k+</span>
-            <span class="label">Squads</span>
+            <span class="label">Friends</span>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
 
     <!-- SOCIAL PROOF STRIP -->
     <!-- <section class="social-proof reveal-stagger" style="max-width: none;">
-      <div class="sp-label">Trusted by 50,000+ squads</div>
+      <div class="sp-label">Trusted by 50,000+ friends</div>
       <div class="sp-logos">
         <div class="sp-logo">TechCrunch</div>
         <div class="sp-logo">The Verge</div>
@@ -186,7 +186,7 @@
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>Invite your squad</h3>
+          <h3>Invite your friends</h3>
           <p>Send an invite link. They join, add a card, and the split is locked in. Everybody sees who paid what.</p>
           <div class="step-visual">
             <div class="step-avatars">
@@ -381,12 +381,12 @@
       <div class="section-label reveal" style="justify-content: center;">Pricing</div>
       <h2 class="reveal">Free to start.<br/>Worth it to <span class="italic">upgrade</span>.</h2>
       <p class="pricing-sub reveal">
-        Start free with up to 2 splits. Get Kilo Plus for unlimited everything — less than one coffee a month.
+        Start free with up to 5 active splits. Get Kilo Plus for unlimited everything — less than one coffee a month.
       </p>
 
       <div class="billing-toggle reveal">
         <div class="bt-option active" data-period="monthly">Monthly</div>
-        <div class="bt-option" data-period="annual">Annual<span class="save">Save 20%</span></div>
+        <div class="bt-option" data-period="annual">Annual<span class="save">Save 33%</span></div>
       </div>
 
       <div class="pricing-grid reveal-stagger">
@@ -397,7 +397,7 @@
           <div class="price-period">forever, no card required</div>
           <a href="#download" class="price-cta primary">Get Kilo free</a>
           <ul class="price-features">
-            <li>Up to 2 active splits</li>
+            <li>Up to 5 active splits</li>
             <li>Auto-charge on billing day</li>
             <li>Billing calendar</li>
             <li>Friend balances</li>
@@ -409,8 +409,8 @@
           <div class="price-tag">Most popular</div>
           <div class="price-name">Plus</div>
           <div class="price-desc">Unlimited splits and deeper insights.</div>
-          <div class="price-amount" data-monthly="$3.99" data-annual="$2.99">$3.99</div>
-          <div class="price-period" data-monthly-label="per month" data-annual-label="per month, billed annually">per month</div>
+          <div class="price-amount" data-monthly="$4.99" data-annual="$3.33">$4.99</div>
+          <div class="price-period" data-monthly-label="per month" data-annual-label="per month ($39.99/yr)">per month</div>
           <a href="#download" class="price-cta primary">Get Kilo Plus</a>
           <ul class="price-features">
             <li>Everything in Free</li>
@@ -454,8 +454,8 @@
     <!-- CREATORS / SQUADS -->
     <section class="creators">
       <div class="reveal reveal-left">
-        <div class="section-label">For streamers &amp; squads</div>
-        <h2>Split with<br />your <span class="italic">squad</span>.</h2>
+        <div class="section-label">For everyone</div>
+        <h2>Split with<br />your <span class="italic">friends</span>.</h2>
         <p style="font-size: 18px; color: #4a3968; line-height: 1.6; max-width: 480px; margin-bottom: 32px;">
           Game Pass. Discord Nitro. Spotify Family. YouTube Premium. The stuff you and your people use every day — now fairly split, automatically collected.
         </p>
@@ -465,7 +465,7 @@
         </a>
       </div>
       <div class="creators-visual reveal reveal-right">
-        <div class="squad-label">YOUR SQUAD · 4 MEMBERS</div>
+        <div class="squad-label">YOUR FRIENDS · 4 MEMBERS</div>
         <div class="squad-title">The<br />Gamer House</div>
         <div class="squad-list">
           <div class="squad-item">
@@ -507,7 +507,7 @@
             <span>Is Kilo free?</span>
             <span class="plus">+</span>
           </button>
-          <div class="faq-a">Yes — Kilo is free for up to 2 active splits, forever. No credit card required to get started. Kilo Plus unlocks unlimited splits and advanced features for less than a coffee a month.</div>
+          <div class="faq-a">Yes — Kilo is free for up to 5 active splits, forever. No credit card required to get started. Kilo Plus unlocks unlimited splits and advanced features for less than a coffee a month.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
@@ -574,8 +574,8 @@
         <div class="cta-grid reveal-stagger">
           <div class="sms-box">
             <h4>Text me the link</h4>
-            <form class="sms-form" onsubmit="event.preventDefault(); alert('Link sent! (demo)');">
-              <input type="tel" placeholder="(555) 123-4567" aria-label="Phone number" />
+            <form class="sms-form" id="sms-form">
+              <input type="tel" placeholder="(555) 123-4567" aria-label="Phone number" id="phone-input" />
               <button type="submit">Send</button>
             </form>
           </div>

@@ -7,7 +7,7 @@ hydrateServiceIcons();
 document.querySelectorAll(".faq-item").forEach((item) => {
   const btn = item.querySelector(".faq-q");
   if (!btn) return;
-  btn.addEventListener("click", () => {
+  item.addEventListener("click", () => {
     const isOpen = item.classList.toggle("open");
     btn.setAttribute("aria-expanded", String(isOpen));
   });
@@ -375,3 +375,20 @@ if (helpSearch) {
     });
   });
 })();
+
+// SMS form handler
+const smsForm = document.getElementById("sms-form");
+if (smsForm) {
+  smsForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("phone-input");
+    const phone = input.value.trim();
+    if (!phone) {
+      alert("Please enter a phone number.");
+      return;
+    }
+    // Simulate sending SMS
+    alert(`Download link sent to ${phone}! Check your messages.`);
+    input.value = "";
+  });
+}
